@@ -52,4 +52,40 @@ section:nth-of-type(1) li span{
     width: 10px; 
     height: 10px; 
 }
-
+.sale-product div{
+    padding: .5rem;
+}
+.sale-product .contain_img{
+    min-height: 260px;
+}
+.sale-product h4{
+    font-size: 18px;
+    font-weight: 400;
+}
+.sale-product p{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.sale-product span:first-of-type{
+    text-decoration: line-through;
+    font-size: 12px;
+}
+.sale-product span:last-of-type{
+    font-size: 18px;
+    color: #F5912C;
+    font-weight: 600;
+}
+.item_sale{
+    transition: all .3s ease;
+}
+.item_sale:hover{
+    transform: translateY(-10px);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.item_sale div:last-child{
+    padding-left: .5rem;
+}
+#banner{
+    
+}

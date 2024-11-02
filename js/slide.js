@@ -1,4 +1,4 @@
-export function initializeSlider(selector) {
+export default function initializeSlider(selector) {
     $(selector).slick({
         dots: true,
         infinite: true,
@@ -6,6 +6,6 @@ export function initializeSlider(selector) {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1500,
     });
 }
