@@ -1,0 +1,55 @@
+@import 'tailwind.css';
+
+section:nth-of-type(1) li{
+    padding: .35rem 1rem;
+}
+section:nth-of-type(1) .category li:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+section:nth-of-type(1) li a {
+    gap: 5px;
+}
+section:nth-of-type(1) li span{
+    text-transform: capitalize;
+}
+.category-left a 
+{
+    flex-direction: row-reverse;
+}
+.slider{
+    max-height: 415px;
+}
+
+.slick-prev {
+    left: 15px;
+    z-index: 1;     
+}
+
+.slick-next {
+    right: 18px;
+    z-index: 1; 
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+    color: white; 
+    font-size: 30px; 
+}
+
+.slick-dots {
+    bottom: 10px;  
+    text-align: center;  
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+.slick-dots li button {
+    background: transparent;
+    border-radius: 50%; 
+    width: 10px; 
+    height: 10px; 
+}
+
