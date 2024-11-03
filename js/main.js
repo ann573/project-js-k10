@@ -8,7 +8,7 @@ const searchInput = document.getElementById("search-input");
 const searchResults = document.getElementById("search-results");
 const overlay = document.getElementById("overlay");
 const selectClothes = document.querySelector(".select-clothes");
-console.dir(selectClothes);
+const selectTech = document.querySelector(".select-tech")
 const category = await getAll("products/category-list");
 const data = await getAll("products");
 const products = data.products;
@@ -179,7 +179,6 @@ async function renderClothes(data) {
   const elementSuget = document.querySelector(".product_list");
   const dataSugget = await getAll("products/category/womens-dresses");
   dataSugget.products.forEach((item) => {
-    console.log(item);
     const divElement2 = document.createElement("div");
     divElement2.classList.add("flex", "cursor-pointer", "contain-sug");
     divElement2.innerHTML = `
@@ -208,6 +207,21 @@ Array.from(selectClothes.children).forEach((item) => {
 $(document).ready(function () {
   initializeSlider(".slider");
 });
+
+Array.from(selectTech.children).forEach((item) => {
+  item.addEventListener("click", () => {
+    Array.from(selectTech.children).forEach((child) => {
+      child.classList.remove("opacity-100");
+      child.classList.add("opacity-45");
+    });
+
+    item.classList.add("opacity-100");
+  });
+});
+$(document).ready(function () {
+  initializeSlider(".slider");
+});
+
 
 renderCategory();
 renderHotSale(data.products);

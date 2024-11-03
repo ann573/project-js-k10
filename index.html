@@ -22,45 +22,62 @@
     <title>Trust Mart</title>
   </head>
   <body>
-    <header class="container mx-auto grid grid-cols-12 gap-5 py-5 px-10 shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50">
+    <header
+      class="container mx-auto grid grid-cols-12 gap-5 py-5 px-10 shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50"
+    >
       <div class="logo col-span-3 text-center flex justify-center">
-          <a href="#">
-              <img class="site-logo" alt="Đồ công nghệ" src="./assests/img/logo-trustmart.png" />
-          </a>
+        <a href="#">
+          <img
+            class="site-logo"
+            alt="Đồ công nghệ"
+            src="./assests/img/logo-trustmart.png"
+          />
+        </a>
       </div>
       <div class="search col-span-5 flex items-center">
-          <div class="search_input flex items-center w-full relative">
-              <i class="ri-search-line absolute left-2"></i>
-              <input
-                  type="text"
-                  name="search"
-                  placeholder="Tìm kiếm sản phẩm"
-                  class="outline-none border border-[#eee] w-full py-2 px-8 rounded-xl"
-                  id="search-input"
-              />
-              <div id="search-results" class="hidden absolute top-[150%] w-full bg-white shadow-lg z-20">
-                
-              </div>
-          </div>
+        <div class="search_input flex items-center w-full relative">
+          <i class="ri-search-line absolute left-2"></i>
+          <input
+            type="text"
+            name="search"
+            placeholder="Tìm kiếm sản phẩm"
+            class="outline-none border border-[#eee] w-full py-2 px-8 rounded-xl"
+            id="search-input"
+          />
+          <div
+            id="search-results"
+            class="hidden absolute top-[150%] w-full bg-white shadow-lg z-20"
+          ></div>
+        </div>
       </div>
       <div class="col-span-2 flex items-center justify-end gap-2">
-          <i class="ri-phone-line text-3xl"></i>
-          <div class="text flex flex-col">
-              <span class="text-sm ">Hotline</span>
-              <span class="font-semibold">1900.88.8888</span>
-          </div>
+        <i class="ri-phone-line text-3xl"></i>
+        <div class="text flex flex-col">
+          <span class="text-sm">Hotline</span>
+          <span class="font-semibold">1900.88.8888</span>
+        </div>
       </div>
       <div class="relative flex items-center justify-center cursor-pointer">
-          <i class="ri-shopping-basket-line text-3xl"></i>
-          <p class="absolute top-0 left-14 bg-black rounded-lg text-[#fff] text-xs size-5 flex justify-center items-center">0</p>
+        <i class="ri-shopping-basket-line text-3xl"></i>
+        <p
+          class="absolute top-0 left-14 bg-black rounded-lg text-[#fff] text-xs size-5 flex justify-center items-center"
+        >
+          0
+        </p>
       </div>
       <div class="flex items-center">
-          <button class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]">Login</button>
+        <button
+          class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]"
+        >
+          Login
+        </button>
       </div>
-  </header>
-  
-  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
-  
+    </header>
+
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black opacity-50 hidden z-40"
+    ></div>
 
     <section class="max-w-[1300px] mx-auto grid grid-cols-12 gap-2 my-4 pt-24">
       <div class="col-span-2">
@@ -158,13 +175,11 @@
         />
       </a>
     </section>
-    
+
     <section class="max-w-[1300px] mx-auto my-5" id="section_hot_item">
       <h2 class="relative text-2xl font-semibold">TOP SẢN PHẨM BÁN CHẠY</h2>
-      <hr class="my-5">
-      <div class="grid grid-cols-5 gap-5 hot_item px-5 pb-5">
-
-      </div>
+      <hr class="my-5" />
+      <div class="grid grid-cols-5 gap-5 hot_item px-5 pb-5"></div>
     </section>
 
     <section class="max-w-[1300px] mx-auto my-5" id="clothes">
@@ -172,34 +187,37 @@
         <i class="ri-shirt-line text-2xl"></i>
         <h2 class="ml-5 text-2xl font-semibold">Thời trang</h2>
       </div>
-      <hr>
+      <hr />
       <div class="grid grid-cols-7">
         <div class="col-span-5">
-            <div class="image p-3">
-              <img src="https://intphcm.com/data/upload/banner-thoi-trang-nam.jpg" alt="thoitrang"
-              class="w-full object-cover">
-              <p class="my-3 flex gap-5 select-clothes">
-                <a class="cursor-pointer opacity-100 hover:opacity-100">New Arrivals</a>
-                <a class="cursor-pointer opacity-45 hover:opacity-100">Best Seller</a>
-              </p>
-              <hr class="mt-3">
-            </div>
-            <div class="product-clothes grid grid-cols-5 gap-3 p-3">
-              
-            </div>
+          <div class="image p-3">
+            <img
+              src="https://intphcm.com/data/upload/banner-thoi-trang-nam.jpg"
+              alt="thoitrang"
+              class="w-full object-cover"
+            />
+            <p class="my-3 flex gap-5 select-clothes">
+              <a class="cursor-pointer opacity-100 hover:opacity-100"
+                >New Arrivals</a
+              >
+              <a class="cursor-pointer opacity-45 hover:opacity-100"
+                >Best Seller</a
+              >
+            </p>
+            <hr class="mt-3" />
+          </div>
+          <div class="product-clothes grid grid-cols-5 gap-3 p-3"></div>
         </div>
         <div class="col-span-2 py-2 px-3 border-l-2">
           <h3 class="text-xl font-semibold mb-5">Đề xuất cho bạn</h3>
-          <div class="product_list w-full flex flex-col gap-7">
-
-          </div>
+          <div class="product_list w-full flex flex-col gap-7"></div>
         </div>
       </div>
     </section>
 
     <section class="max-w-[1300px] mx-auto my-5" id="second_banner">
       <div class="w-full">
-        <img src="./assests/img/banner2.jpg" alt="banner" class="w-full">
+        <img src="./assests/img/banner2.jpg" alt="banner" class="w-full" />
       </div>
     </section>
 
@@ -208,27 +226,30 @@
         <i class="ri-smartphone-line text-2xl"></i>
         <h2 class="ml-5 text-2xl font-semibold">Đồ Công Nghệ</h2>
       </div>
-      <hr>
+      <hr />
       <div class="grid grid-cols-7">
         <div class="col-span-5">
-            <div class="image p-3">
-              <img src="https://intphcm.com/data/upload/banner-thoi-trang-nam.jpg" alt="thoitrang"
-              class="w-full object-cover">
-              <p class="my-3 flex gap-5 select-clothes">
-                <a class="cursor-pointer opacity-100 hover:opacity-100">New Arrivals</a>
-                <a class="cursor-pointer opacity-45 hover:opacity-100">Best Seller</a>
-              </p>
-              <hr class="mt-3">
-            </div>
-            <div class="product-clothes grid grid-cols-5 gap-3 p-3">
-              
-            </div>
+          <div class="image p-3">
+            <img
+              src="https://happyphone.vn/wp-content/uploads/2024/09/Banner-Iphone-16.webp"
+              alt="thoitrang"
+              class="w-full object-cover"
+            />
+            <p class="my-3 flex gap-5 select-tech">
+              <a class="cursor-pointer opacity-100 hover:opacity-100"
+                >New Arrivals</a
+              >
+              <a class="cursor-pointer opacity-45 hover:opacity-100"
+                >Best Seller</a
+              >
+            </p>
+            <hr class="mt-3" />
+          </div>
+          <div class="product-clothes grid grid-cols-5 gap-3 p-3"></div>
         </div>
         <div class="col-span-2 py-2 px-3 border-l-2">
           <h3 class="text-xl font-semibold mb-5">Đề xuất cho bạn</h3>
-          <div class="product_list w-full flex flex-col gap-7">
-
-          </div>
+          <div class="product_list w-full flex flex-col gap-7"></div>
         </div>
       </div>
     </section>
