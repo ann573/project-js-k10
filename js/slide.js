@@ -9,3 +9,5 @@ export default function initializeSlider(selector) {
         autoplaySpeed: 1500,
     });
 }
+
+

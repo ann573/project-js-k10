@@ -1,5 +1,29 @@
 @import 'tailwind.css';
+#search-results {
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+#search-results i{
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    color: red;
+    font-size: 40px;
+    z-index: 999999;
+}
+.result-item {
+    padding: 10px;
+    cursor: pointer;
+}
 
+.result-item:hover {
+    background-color: rgba(102, 102, 102, 0.238); 
+}
+.result-item img{
+    width: 50px;
+    margin-right: 30px;
+}
+/* =================end header=================== */
 section:nth-of-type(1) li{
     padding: .35rem 1rem;
 }
@@ -86,6 +110,88 @@ section:nth-of-type(1) li span{
 .item_sale div:last-child{
     padding-left: .5rem;
 }
-#banner{
-    
+.contain_desc{
+    padding-left: 1.5rem !important;
+}
+.star {
+    font-size: 24px;
+    color: gray; /* Màu xám cho sao rỗng */
+    position: relative;
+}
+
+.filled {
+    color: gold; /* Màu vàng cho sao đầy */
+}
+
+.half-filled {
+    color: gold; /* Màu vàng cho phần nửa */
+}
+
+.half-filled::after {
+    content: '★'; /* Ký hiệu cho sao đầy */
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 50%; /* Chỉ hiển thị nửa sao */
+    white-space: nowrap;
+    color: gold; /* Màu cho phần đầy */
+}
+/* ==================== */
+#section_hot_item h2{
+    top: 12px;
+    left: 20px;
+}
+.hot_item >div{
+    padding: .5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.hot_item >div:hover{
+    outline: 1px solid #6666664d;
+}
+.hot_item h3{
+    height: 56px;
+    overflow: hidden;
+    transition: color .2s;
+}
+.hot_item h3:hover{
+    color: rgba(255, 105, 0, 1);
+}
+.hot_item .content_box{
+    padding: .5rem;
+}
+.hot_item .price > span{
+    color: #F5912C;
+    font-size: 18px;
+    font-weight: 500;
+}
+/* .hot_item .price .rating span:first-child{
+    color: gold;
+    font-size: 1.3rem;
+} */
+/* ============= clothes ============== */
+.clothes_item{
+    padding: .5rem;
+    cursor: pointer;
+}
+.clothes_item:hover{
+    outline: 1px solid #666;
+}
+.clothes_item h3{
+    min-height: 48px;
+}
+.wrap-img-sug{
+    width: 30%;
+}
+.contain-sug{
+    transition: all .2s ease;
+}
+.contain-sug:hover{
+    background-color: rgba(102, 102, 102, 0.249);
+}
+/* ============================ end clothes ======================= */
+#second_banner{
+    width: 100%;
+    height: max-content;
+
 }
