@@ -93,7 +93,6 @@ function renderHotItem(page) {
   hotItem.innerHTML = ""; // Xóa nội dung cũ
 
   const start = (page - 1) * productsPerPage;
-  console.log(start)
   const end = start + productsPerPage;
   const productsToDisplay = data.products.slice(start, end);
 
