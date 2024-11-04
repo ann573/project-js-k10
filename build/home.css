@@ -165,6 +165,19 @@ section:nth-of-type(1) li span{
     font-size: 18px;
     font-weight: 500;
 }
+.page-btn{
+    margin: 1rem;
+}
+.page-btn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #F5912C;
+    color: white;
+}
 /* .hot_item .price .rating span:first-child{
     color: gold;
     font-size: 1.3rem;

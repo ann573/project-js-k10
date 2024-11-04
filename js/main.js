@@ -39,6 +39,9 @@ const categories = [
   '<i class="ri-timer-2-line"></i>',
 ];
 
+const productsPerPage = 10; 
+let currentPage = 1;
+
 function renderCategory() {
   category.forEach((e, index) => {
     const liElement = document.createElement("li");
@@ -85,26 +88,53 @@ function renderHotSale(data) {
   });
 }
 
-function renderHotItem() {
+function renderHotItem(page) {
   const hotItem = document.querySelector(".hot_item");
-  for (let i = 0; i < 20; i++) {
+  hotItem.innerHTML = ""; // Xóa nội dung cũ
+
+  const start = (page - 1) * productsPerPage;
+  console.log(start)
+  const end = start + productsPerPage;
+  const productsToDisplay = data.products.slice(start, end);
+
+  productsToDisplay.forEach((product) => {
     const divElement = document.createElement("div");
-    divElement.innerHTML = /*html */ ` 
+    divElement.innerHTML = /*html */ `
         <div class='contain_img'>
-          <img src="${data.products[i].thumbnail}"/>
+          <img src="${product.thumbnail}"/>
         </div>
         <div class='content_box'>
-          <h3 class="font-semibold text-xl">${data.products[i].title}</h3>
+          <h3 class="font-semibold text-xl">${product.title}</h3>
           <div class="price flex justify-between items-center">
-            <span>$${data.products[i].price}</span>
+            <span>$${product.price}</span>
             <div class="rating">
               <span class="text-[gold] text-xl">★</span>
-              <span>${data.products[i].rating} (${data.products[i].reviews.length})</span>
+              <span>${product.rating} (${product.reviews.length})</span>
             </div>
           </div>
         </div>
       `;
     hotItem.appendChild(divElement);
+  });
+
+  updatePagination();
+}
+
+function updatePagination() {
+  const pagination = document.querySelector(".pagination");
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(data.products.length / productsPerPage);
+  
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.innerHTML = i === currentPage ? `<span>${i}</span>` : `${i}`;
+    button.className = "page-btn";
+    button.addEventListener("click", () => {
+      currentPage = i;
+      renderHotItem(currentPage);
+    });
+    pagination.appendChild(button);
   }
 }
 
@@ -151,8 +181,8 @@ overlay.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
 
-async function renderClothes(data) {
-  const element = document.querySelector(".product-clothes");
+async function renderClothes(data, dataSugget, fquery, squery) {
+  const element = document.querySelector(fquery);
   data.products.forEach((item) => {
     let star = "";
     const divElement = document.createElement("a");
@@ -176,8 +206,7 @@ async function renderClothes(data) {
     element.appendChild(divElement);
   });
 
-  const elementSuget = document.querySelector(".product_list");
-  const dataSugget = await getAll("products/category/womens-dresses");
+  const elementSuget = document.querySelector(squery);
   dataSugget.products.forEach((item) => {
     const divElement2 = document.createElement("div");
     divElement2.classList.add("flex", "cursor-pointer", "contain-sug");
@@ -204,6 +233,7 @@ Array.from(selectClothes.children).forEach((item) => {
     item.classList.add("opacity-100");
   });
 });
+
 $(document).ready(function () {
   initializeSlider(".slider");
 });
@@ -225,5 +255,7 @@ $(document).ready(function () {
 
 renderCategory();
 renderHotSale(data.products);
-renderHotItem();
-renderClothes(await getAll("products/category/mens-shirts"));
+renderHotItem(currentPage);
+renderClothes(await getAll("products/category/mens-shirts"), await getAll("products/category/womens-dresses"), ".product-clothes", ".product_list");
+renderClothes(await getAll("products/category/smartphones?limit=5"), await getAll("products/category/laptops?limit=5"), ".product-mobile", ".product_list_tech");
+
