@@ -1,7 +1,9 @@
-import { defineConfig } from "vite";
-
+import { defineConfig } from 'vite';
+import vercel from 'vite-plugin-vercel';
+ 
 export default defineConfig({
-  build: {
-    target: "esnext", // Hoặc 'es2022'
+  server: {
+    port: process.env.PORT,
   },
+  plugins: [vercel()],
 });
