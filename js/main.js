@@ -8,10 +8,8 @@ const searchInput = document.getElementById("search-input");
 const searchResults = document.getElementById("search-results");
 const overlay = document.getElementById("overlay");
 const selectClothes = document.querySelector(".select-clothes");
-const selectTech = document.querySelector(".select-tech")
-const category = await getAll("products/category-list");
-const data = await getAll("products");
-const products = data.products;
+const selectTech = document.querySelector(".select-tech");
+
 const categories = [
   '<i class="ri-brush-line"></i>',
   '<i class="ri-store-2-line"></i>',
@@ -38,11 +36,34 @@ const categories = [
   '<i class="ri-women-line"></i>',
   '<i class="ri-timer-2-line"></i>',
 ];
-
-const productsPerPage = 10; 
+const productsPerPage = 10;
 let currentPage = 1;
 
-function renderCategory() {
+(async () => {
+  const category = await getAll("products/category-list");
+  const data = await getAll("products");
+  renderCategory(category);
+  renderHotSale(data.products);
+  renderHotItem(currentPage , data);
+  renderClothes(
+    await getAll("products/category/mens-shirts"),
+    await getAll("products/category/womens-dresses"),
+    ".product-clothes",
+    ".product_list"
+  );
+  renderClothes(
+    await getAll("products/category/smartphones?limit=5"),
+    await getAll("products/category/laptops?limit=5"),
+    ".product-mobile",
+    ".product_list_tech"
+  );
+
+console.log(data)
+})();
+
+
+
+function renderCategory(category) {
   category.forEach((e, index) => {
     const liElement = document.createElement("li");
     // liElement.classList.add("m-3")
@@ -88,7 +109,7 @@ function renderHotSale(data) {
   });
 }
 
-function renderHotItem(page) {
+function renderHotItem(page, data) {
   const hotItem = document.querySelector(".hot_item");
   hotItem.innerHTML = ""; // Xóa nội dung cũ
 
@@ -116,15 +137,15 @@ function renderHotItem(page) {
     hotItem.appendChild(divElement);
   });
 
-  updatePagination();
+  updatePagination(data);
 }
 
-function updatePagination() {
+function updatePagination(data) {
   const pagination = document.querySelector(".pagination");
   pagination.innerHTML = "";
 
   const totalPages = Math.ceil(data.products.length / productsPerPage);
-  
+
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement("button");
     button.innerHTML = i === currentPage ? `<span>${i}</span>` : `${i}`;
@@ -250,11 +271,3 @@ Array.from(selectTech.children).forEach((item) => {
 $(document).ready(function () {
   initializeSlider(".slider");
 });
-
-
-renderCategory();
-renderHotSale(data.products);
-renderHotItem(currentPage);
-renderClothes(await getAll("products/category/mens-shirts"), await getAll("products/category/womens-dresses"), ".product-clothes", ".product_list");
-renderClothes(await getAll("products/category/smartphones?limit=5"), await getAll("products/category/laptops?limit=5"), ".product-mobile", ".product_list_tech");
-
