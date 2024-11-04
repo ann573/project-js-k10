@@ -141,12 +141,13 @@ section:nth-of-type(1) li span{
     top: 12px;
     left: 20px;
 }
-.hot_item >div{
+.hot_item > a{
+    display: block;
     padding: .5rem;
     cursor: pointer;
     border-radius: 5px;
 }
-.hot_item >div:hover{
+.hot_item > a:hover{
     outline: 1px solid #6666664d;
 }
 .hot_item h3{

@@ -1,4 +1,4 @@
-import { getAll, getById, removeById, updateById } from "./service.js";
+import { getAll} from "./service.js";
 import initializeSlider from "./slide.js";
 
 const categoryLeft = document.querySelector(".category-left");
@@ -89,7 +89,7 @@ function renderHotSale(data) {
   }
   arrIndex.forEach((index) => {
     const alcorElement = document.createElement("a");
-    alcorElement.setAttribute("href", "google.com");
+    alcorElement.setAttribute("href", `./pages/product-detail.html?id=${index}`);
     alcorElement.classList.add("item_sale");
     alcorElement.innerHTML = /*html */ `
             <div class='contain_img'>
@@ -118,8 +118,9 @@ function renderHotItem(page, data) {
   const productsToDisplay = data.products.slice(start, end);
 
   productsToDisplay.forEach((product) => {
-    const divElement = document.createElement("div");
-    divElement.innerHTML = /*html */ `
+    const alcorElement = document.createElement("a");
+    alcorElement.setAttribute("href", `./pages/product-detail.html?id=${product.id}`)
+    alcorElement.innerHTML = /*html */ `
         <div class='contain_img'>
           <img src="${product.thumbnail}"/>
         </div>
@@ -134,7 +135,7 @@ function renderHotItem(page, data) {
           </div>
         </div>
       `;
-    hotItem.appendChild(divElement);
+    hotItem.appendChild(alcorElement);
   });
 
   updatePagination(data);
@@ -152,18 +153,20 @@ function updatePagination(data) {
     button.className = "page-btn";
     button.addEventListener("click", () => {
       currentPage = i;
-      renderHotItem(currentPage);
+      renderHotItem(currentPage, data);
     });
     pagination.appendChild(button);
   }
 }
 
-// Lắng nghe sự kiện input
-searchInput.addEventListener("input", () => {
+searchInput.addEventListener("input", debounce(async () => {
   const query = searchInput.value.toLowerCase();
-  searchResults.innerHTML = "<i class='ri-triangle-fill'></i>";
   searchResults.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  
+  const productData = await getAll("products");
+  const products = productData.products;
+  searchResults.innerHTML = '';
 
   if (query) {
     const filteredProducts = products.filter((product) =>
@@ -172,15 +175,13 @@ searchInput.addEventListener("input", () => {
 
     if (filteredProducts.length > 0) {
       filteredProducts.forEach((product) => {
-        const resultItem = document.createElement("div");
+        const resultItem = document.createElement("a");
+        resultItem.setAttribute("href", `./pages/product-detail.html?id=${product.id}`);
         resultItem.className = "result-item flex items-center";
         resultItem.innerHTML = `
-                  <img src="${product.thumbnail}" alt="${product.title}"/>
-                  <span>${product.title}</span>
-              `;
-        resultItem.addEventListener("click", () => {
-          console.log("hello");
-        });
+          <img src="${product.thumbnail}" alt="${product.title}"/>
+          <span>${product.title}</span>
+        `;
         searchResults.appendChild(resultItem);
       });
     } else {
@@ -193,7 +194,19 @@ searchInput.addEventListener("input", () => {
   } else {
     overlay.classList.add("hidden");
   }
-});
+}, 300)); 
+
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
 
 overlay.addEventListener("click", () => {
   searchInput.value = "";
@@ -206,6 +219,7 @@ async function renderClothes(data, dataSugget, fquery, squery) {
   data.products.forEach((item) => {
     let star = "";
     const divElement = document.createElement("a");
+    divElement.setAttribute("href", `./pages/product-detail.html?id=${item.id}`)
     divElement.classList.add("clothes_item");
     for (let i = 1; i <= item.rating; i++) {
       star += `<span class="text-[gold] text-xl">★</span>`;
@@ -228,7 +242,8 @@ async function renderClothes(data, dataSugget, fquery, squery) {
 
   const elementSuget = document.querySelector(squery);
   dataSugget.products.forEach((item) => {
-    const divElement2 = document.createElement("div");
+    const divElement2 = document.createElement("a");
+    divElement2.setAttribute("href", `./pages/product-detail.html?id=${item.id}`)
     divElement2.classList.add("flex", "cursor-pointer", "contain-sug");
     divElement2.innerHTML = `
       <div class="wrap-img-sug">
@@ -254,10 +269,6 @@ Array.from(selectClothes.children).forEach((item) => {
   });
 });
 
-$(document).ready(function () {
-  initializeSlider(".slider");
-});
-
 Array.from(selectTech.children).forEach((item) => {
   item.addEventListener("click", () => {
     Array.from(selectTech.children).forEach((child) => {
@@ -268,6 +279,7 @@ Array.from(selectTech.children).forEach((item) => {
     item.classList.add("opacity-100");
   });
 });
+
 $(document).ready(function () {
   initializeSlider(".slider");
 });
