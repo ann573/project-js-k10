@@ -115,12 +115,12 @@ section:nth-of-type(1) li span{
 }
 .star {
     font-size: 24px;
-    color: gray; /* Màu xám cho sao rỗng */
+    color: gray; 
     position: relative;
 }
 
 .filled {
-    color: gold; /* Màu vàng cho sao đầy */
+    color: gold; 
 }
 
 .half-filled {

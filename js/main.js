@@ -89,7 +89,7 @@ function renderHotSale(data) {
   }
   arrIndex.forEach((index) => {
     const alcorElement = document.createElement("a");
-    alcorElement.setAttribute("href", `./pages/product-detail.html?id=${index}`);
+    alcorElement.setAttribute("href", `./pages/product-detail.html?id=${data[index].id}`);
     alcorElement.classList.add("item_sale");
     alcorElement.innerHTML = /*html */ `
             <div class='contain_img'>

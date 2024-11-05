@@ -42,5 +42,19 @@
   .slick-dots li img:hover{
     outline: 1px solid #fcb800;
   }
-  
+/* ==================== input ======================== */
+.item_sale{
+  transition: all .3s ease;
+}
+.item_sale:hover{
+  transform: translateY(-10px);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.item_sale div:last-child{
+  padding-left: .5rem;
+}
+.contain_desc{
+  padding-left: 1.5rem !important;
+}
+
   

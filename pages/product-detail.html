@@ -17,59 +17,64 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
 
+    <link rel="stylesheet" type="text/css" href="../build/star.css"/>
+
+
     <link rel="stylesheet" href="../build/product-detail.css" />
     <title>Document</title>
   </head>
   <body class="bg-white">
     <header
-      class="container mx-auto grid grid-cols-12 gap-5 py-5 px-10 shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50"
+      class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50"
     >
-      <div class="logo col-span-3 text-center flex justify-center">
-        <a href="../index.html">
-          <img
-            class="site-logo"
-            alt="Đồ công nghệ"
-            src="../assests/img/logo-trustmart.png"
-          />
-        </a>
-      </div>
-      <div class="search col-span-5 flex items-center">
-        <div class="search_input flex items-center w-full relative">
-          <i class="ri-search-line absolute left-2"></i>
-          <input
-            type="text"
-            name="search"
-            placeholder="Tìm kiếm sản phẩm"
-            class="outline-none border border-[#eee] w-full py-2 px-8 rounded-xl"
-            id="search-input"
-          />
-          <div
-            id="search-results"
-            class="hidden absolute top-[150%] w-full bg-white shadow-lg z-20"
-          ></div>
+      <div class="max-w-[1300px] mx-auto grid grid-cols-12 gap-5 py-5 px-10">
+        <div class="logo col-span-3 text-center flex justify-center">
+          <a href="../index.html">
+            <img
+              class="site-logo"
+              alt="Đồ công nghệ"
+              src="../assests/img/logo-trustmart.png"
+            />
+          </a>
         </div>
-      </div>
-      <div class="col-span-2 flex items-center justify-end gap-2">
-        <i class="ri-phone-line text-3xl"></i>
-        <div class="text flex flex-col">
-          <span class="text-sm">Hotline</span>
-          <span class="font-semibold">1900.88.8888</span>
+        <div class="search col-span-5 flex items-center">
+          <div class="search_input flex items-center w-full relative">
+            <i class="ri-search-line absolute left-2"></i>
+            <input
+              type="text"
+              name="search"
+              placeholder="Tìm kiếm sản phẩm"
+              class="outline-none border border-[#eee] w-full py-2 px-8 rounded-xl"
+              id="search-input"
+            />
+            <div
+              id="search-results"
+              class="hidden absolute top-[150%] w-full bg-white shadow-lg z-20"
+            ></div>
+          </div>
         </div>
-      </div>
-      <div class="relative flex items-center justify-center cursor-pointer">
-        <i class="ri-shopping-basket-line text-3xl"></i>
-        <p
-          class="absolute top-0 left-14 bg-black rounded-lg text-[#fff] text-xs size-5 flex justify-center items-center"
-        >
-          0
-        </p>
-      </div>
-      <div class="flex items-center">
-        <button
-          class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]"
-        >
-          Login
-        </button>
+        <div class="col-span-2 flex items-center justify-end gap-2">
+          <i class="ri-phone-line text-3xl"></i>
+          <div class="text flex flex-col">
+            <span class="text-sm">Hotline</span>
+            <span class="font-semibold">1900.88.8888</span>
+          </div>
+        </div>
+        <div class="relative flex items-center justify-center cursor-pointer">
+          <i class="ri-shopping-basket-line text-3xl"></i>
+          <p
+            class="absolute top-0 left-14 bg-black rounded-lg text-[#fff] text-xs size-5 flex justify-center items-center"
+          >
+            0
+          </p>
+        </div>
+        <div class="flex items-center">
+          <button
+            class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]"
+          >
+            Login
+          </button>
+        </div>
       </div>
     </header>
     <div
@@ -77,27 +82,79 @@
       class="fixed inset-0 bg-black opacity-50 hidden z-40"
     ></div>
 
-    <div class=" bg-[#eee] ">
-        <div class="max-w-[1300px] mx-auto pt-[100px] pb-5 text-sm
-        path"></div>
+    <div class="bg-[#eee]">
+      <div class="max-w-[1300px] mx-auto pt-[100px] pb-5 text-sm path"></div>
     </div>
 
-    <section class=" max-w-[1300px] mx-auto pt-5">
-        <div class="title_product"> </div>
-        <hr class="my-2">
-        <div class="main grid grid-cols-5">
-            <!-- <div class="your-slider">
-            <div><img src="image1.jpg" alt="Slide 1"></div>
-            <div><img src="image2.jpg" alt="Slide 2"></div>
-            <div><img src="image3.jpg" alt="Slide 3"></div>
-        </div>
-        <div class="slick-dots">
-            <li><img src="image1.jpg" alt="Dot 1"></li>
-            <li><img src="image2.jpg" alt="Dot 2"></li>
-            <li><img src="image3.jpg" alt="Dot 3"></li>
-          </div> -->
-        </div>
+    <section class="max-w-[1300px] mx-auto pt-5">
+      <div class="title_product"></div>
+      <hr class="my-2" />
+      <div class="main grid grid-cols-5 gap-7"></div>
     </section>
+
+    <section class="max-w-[1300px] mx-auto mt-20">
+      <hr class="mb-10" />
+      <div class="grid grid-cols-6 gap-5">
+        <div class="number_rating col-span-2"></div>
+
+        <form action="#" id="form_rating" class="col-span-4 ">
+          <h3 class="font-bold text-xl">Thêm lời nhận xét</h3>
+          <p class="text-[#666666] text-sm my-2">
+            Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc
+            được đánh dấu <span class="text-red-500">*</span>
+          </p>
+          <div class="flex items-center gap-5">
+            <p class="text-sm ">Đánh giá của bạn về sản phẩm: 
+            </p>
+            <fieldset class="starability-basic">
+              <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+              <input type="radio" id="first-rate1" name="rating" value="1" />
+              <label for="first-rate1" title="Terrible">1 star</label>
+              <input type="radio" id="first-rate2" name="rating" value="2" />
+              <label for="first-rate2" title="Not good">2 stars</label>
+              <input type="radio" id="first-rate3" name="rating" value="3" />
+              <label for="first-rate3" title="Average">3 stars</label>
+              <input type="radio" id="first-rate4" name="rating" value="4" />
+              <label for="first-rate4" title="Very good">4 stars</label>
+              <input type="radio" id="first-rate5" name="rating" value="5" />
+              <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+          </div>
+          <textarea
+            name="reviews"
+            id=""
+            cols="102"
+            rows="10"
+            class="border resize-none p-3 focus:outline-[#66666658]"
+            placeholder="Hãy viết lời nhận xét của bạn"
+          ></textarea>
+          <div class="flex gap-5 my-5">
+            <div class="flex flex-col w-1/2">
+              <label for="name">Name <span class="text-red-500">*</span></label>
+              <input type="text" class="p-3 border focus:outline-[#66666658]">
+            </div>
+            <div class="flex flex-col w-1/2">
+              <label for="email">Email <span class="text-red-500">*</span></label>
+              <input type="email"  class="p-3 border focus:outline-[#66666658]">
+            </div>
+          </div>
+          <input type="submit" value="Đăng" class="bg-[#fcb800] py-3 px-10 font-bold rounded-md cursor-pointer" >
+        </form>
+      </div>
+
+      <div class="mt-5">
+        <h4 class="total_reviews bg-[#9f9b9b3e] py-4 px-4 font-medium"></h4>
+        <div class="user-review ">
+
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto mt-20 mb-10">
+      <h3 class="uppercase bg-[#9f9b9b3e] text-center text-xl font-bold py-5">SẢn phẩm tương tự</h3>
+      <div class="grid grid-cols-5 gap-5 px-5 my-5 same_products "></div>
+    </section>
+
     <section>
       <div
         class="max-w-[1300px] mx-auto flex justify-between items-center py-14"
