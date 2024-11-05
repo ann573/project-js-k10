@@ -58,7 +58,6 @@ let currentPage = 1;
     ".product_list_tech"
   );
 
-console.log(data)
 })();
 
 

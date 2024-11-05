@@ -18,7 +18,6 @@ const path = document.querySelector(".path");
 })();
 
 function renderpath(data) {
-  console.log(data);
   path.innerHTML = /*html*/ `
         <a href="../index.html" class="text-[#09c] hover:text-[#fcb800] transition-colors">Home</a> /
         <a href="../pages/category.html?category=${data.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${data.category}</a> /
@@ -136,7 +135,6 @@ function renderInformartion(data) {
   const plusBtn = document.querySelector("#plus")
   const minusBtn = document.querySelector("#minus")
   const quantity = document.querySelector("input[type='tel']")
-  console.log(quantity.value)
   plusBtn.addEventListener("click", ()=>{
     event.preventDefault()
     quantity.value++
@@ -205,7 +203,6 @@ const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month 
 async function renderSameProduct(data) {
   const listSameProducts = document.querySelector(".same_products")
   const sameProduct = await getAll(`products/category/${data.category}`)
-  console.log(sameProduct)
   sameProduct.products.slice(0,5).forEach((item) => {
     const alcorElement = document.createElement("a");
     alcorElement.setAttribute("href", `./product-detail.html?id=${item.id}`);
