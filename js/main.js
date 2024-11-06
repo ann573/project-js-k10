@@ -1,4 +1,4 @@
-import { getAll} from "./service.js";
+import { getAll } from "./service.js";
 import initializeSlider from "./slide.js";
 
 const categoryLeft = document.querySelector(".category-left");
@@ -44,7 +44,7 @@ let currentPage = 1;
   const data = await getAll("products");
   renderCategory(category);
   renderHotSale(data.products);
-  renderHotItem(currentPage , data);
+  renderHotItem(currentPage, data);
   renderClothes(
     await getAll("products/category/mens-shirts"),
     await getAll("products/category/womens-dresses"),
@@ -57,10 +57,7 @@ let currentPage = 1;
     ".product-mobile",
     ".product_list_tech"
   );
-
 })();
-
-
 
 function renderCategory(category) {
   category.forEach((e, index) => {
@@ -88,7 +85,10 @@ function renderHotSale(data) {
   }
   arrIndex.forEach((index) => {
     const alcorElement = document.createElement("a");
-    alcorElement.setAttribute("href", `./pages/product-detail.html?id=${data[index].id}`);
+    alcorElement.setAttribute(
+      "href",
+      `./pages/product-detail.html?id=${data[index].id}`
+    );
     alcorElement.classList.add("item_sale");
     alcorElement.innerHTML = /*html */ `
             <div class='contain_img'>
@@ -118,7 +118,10 @@ function renderHotItem(page, data) {
 
   productsToDisplay.forEach((product) => {
     const alcorElement = document.createElement("a");
-    alcorElement.setAttribute("href", `./pages/product-detail.html?id=${product.id}`)
+    alcorElement.setAttribute(
+      "href",
+      `./pages/product-detail.html?id=${product.id}`
+    );
     alcorElement.innerHTML = /*html */ `
         <div class='contain_img'>
           <img src="${product.thumbnail}"/>
@@ -158,42 +161,48 @@ function updatePagination(data) {
   }
 }
 
-searchInput.addEventListener("input", debounce(async () => {
-  const query = searchInput.value.toLowerCase();
-  searchResults.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  
-  const productData = await getAll("products");
-  const products = productData.products;
-  searchResults.innerHTML = '';
+searchInput.addEventListener(
+  "input",
+  debounce(async () => {
+    const query = searchInput.value.toLowerCase();
+    searchResults.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 
-  if (query) {
-    const filteredProducts = products.filter((product) =>
-      product.title.toLowerCase().includes(query)
-    );
+    const productData = await getAll("products");
+    const products = productData.products;
+    searchResults.innerHTML = "";
 
-    if (filteredProducts.length > 0) {
-      filteredProducts.forEach((product) => {
-        const resultItem = document.createElement("a");
-        resultItem.setAttribute("href", `./pages/product-detail.html?id=${product.id}`);
-        resultItem.className = "result-item flex items-center";
-        resultItem.innerHTML = `
+    if (query) {
+      const filteredProducts = products.filter((product) =>
+        product.title.toLowerCase().includes(query)
+      );
+
+      if (filteredProducts.length > 0) {
+        filteredProducts.forEach((product) => {
+          const resultItem = document.createElement("a");
+          resultItem.setAttribute(
+            "href",
+            `./pages/product-detail.html?id=${product.id}`
+          );
+          resultItem.className = "result-item flex items-center";
+          resultItem.innerHTML = `
           <img src="${product.thumbnail}" alt="${product.title}"/>
           <span>${product.title}</span>
         `;
-        searchResults.appendChild(resultItem);
-      });
+          searchResults.appendChild(resultItem);
+        });
+      } else {
+        const noResultItem = document.createElement("div");
+        noResultItem.className = "text-center p-4";
+        noResultItem.style.paddingBlock = "10px";
+        noResultItem.innerHTML = "<span>Không có kết quả</span>";
+        searchResults.appendChild(noResultItem);
+      }
     } else {
-      const noResultItem = document.createElement("div");
-      noResultItem.className = "text-center p-4";
-      noResultItem.style.paddingBlock = "10px";
-      noResultItem.innerHTML = "<span>Không có kết quả</span>";
-      searchResults.appendChild(noResultItem);
+      overlay.classList.add("hidden");
     }
-  } else {
-    overlay.classList.add("hidden");
-  }
-}, 300)); 
+  }, 300)
+);
 
 function debounce(func, delay) {
   let timeoutId;
@@ -218,7 +227,10 @@ async function renderClothes(data, dataSugget, fquery, squery) {
   data.products.forEach((item) => {
     let star = "";
     const divElement = document.createElement("a");
-    divElement.setAttribute("href", `./pages/product-detail.html?id=${item.id}`)
+    divElement.setAttribute(
+      "href",
+      `./pages/product-detail.html?id=${item.id}`
+    );
     divElement.classList.add("clothes_item");
     for (let i = 1; i <= item.rating; i++) {
       star += `<span class="text-[gold] text-xl">★</span>`;
@@ -242,7 +254,10 @@ async function renderClothes(data, dataSugget, fquery, squery) {
   const elementSuget = document.querySelector(squery);
   dataSugget.products.forEach((item) => {
     const divElement2 = document.createElement("a");
-    divElement2.setAttribute("href", `./pages/product-detail.html?id=${item.id}`)
+    divElement2.setAttribute(
+      "href",
+      `./pages/product-detail.html?id=${item.id}`
+    );
     divElement2.classList.add("flex", "cursor-pointer", "contain-sug");
     divElement2.innerHTML = `
       <div class="wrap-img-sug">
@@ -251,6 +266,7 @@ async function renderClothes(data, dataSugget, fquery, squery) {
       <div>
         <h5>${item.title}</h5>
         <p>$${item.price}</p>
+        <p>tesstttttttt</p>
       </div>
     `;
     elementSuget.appendChild(divElement2);
