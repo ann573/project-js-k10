@@ -266,7 +266,6 @@ async function renderClothes(data, dataSugget, fquery, squery) {
       <div>
         <h5>${item.title}</h5>
         <p>$${item.price}</p>
-        <p>tesstttttttt</p>
       </div>
     `;
     elementSuget.appendChild(divElement2);
