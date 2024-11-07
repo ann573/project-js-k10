@@ -179,7 +179,6 @@ function renderReviews(data){
 const day = date.getDate(); // Lấy ngày (1-31)
 const month = date.getMonth() + 1; // Lấy tháng (0-11) và cộng thêm 1 để có tháng thực (1-12)
 const year = date.getFullYear(); // Lấy năm
-
 // Định dạng lại thành "ngày/tháng/năm"
 const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
     content += /*html */ `

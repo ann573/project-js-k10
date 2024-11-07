@@ -275,11 +275,12 @@ async function renderClothes(data, dataSugget, fquery, squery) {
 Array.from(selectClothes.children).forEach((item) => {
   item.addEventListener("click", () => {
     Array.from(selectClothes.children).forEach((child) => {
+      console.log(child)
       child.classList.remove("opacity-100");
       child.classList.add("opacity-45");
     });
-
     item.classList.add("opacity-100");
+    console.log(item)
   });
 });
 
