@@ -18,82 +18,13 @@
     />
 
 
-    <!-- <style>
-        .filter-price {
-  margin: 20px 0;
-}
 
-.range-container {
-  position: relative;
-  width: 100%;
-  height: 30px;
-}
-
-.price-range {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 10px; /* Tăng độ cao để dễ dàng chỉnh sửa */
-  background: #ddd;
-  -webkit-appearance: none;
-  appearance: none;
-  z-index: 1; /* Đảm bảo thanh trượt không bị che khuất */
-}
-
-.price-range::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 10px; /* Đảm bảo chiều cao của track phù hợp */
-  background: #ddd;
-}
-
-.price-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #007bff;
-  cursor: pointer;
-  position: relative; /* Quan trọng: Đảm bảo dấu chấm không bị lệch */
-  z-index: 2; /* Đảm bảo dấu chấm luôn ở trên */
-}
-
-
-/* Cập nhật vị trí của giá trị hiển thị */
-.range-values {
-  position: absolute;
-  top: 20px;  /* Đảm bảo các giá trị không bị chồng lên nhau */
-  left: 0;
-  font-weight: bold;
-}
-
-.range-values span {
-  margin-right: 5px;
-}
-
-/* Sửa style để tránh chồng lên nhau */
-#minRange {
-  z-index: 1; /* Đảm bảo minRange luôn ở dưới */
-}
-
-#maxRange {
-  z-index: 2; /* Đảm bảo maxRange luôn ở trên */
-}
-
-/* Đảm bảo range có đủ khoảng cách */
-.range-container {
-  position: relative;
-  height: 40px; /* Đảm bảo không gian cho các dấu chấm */
-}
-
-
-    </style> -->
     <title>Danh mục sản phẩm</title>
-    <script type="module" crossorigin src="/assets/category-BUsKFAum.js"></script>
+    <script type="module" crossorigin src="/assets/category-Br3qM1oP.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/service-Ccry4lSF.js">
     <link rel="modulepreload" crossorigin href="/assets/utils-ev9IYk3T.js">
     <link rel="stylesheet" crossorigin href="/assets/utils-Ck3l10TW.css">
-    <link rel="stylesheet" crossorigin href="/assets/category-ktTHcA5O.css">
+    <link rel="stylesheet" crossorigin href="/assets/category-17Bu-Y7E.css">
   </head>
   <body class="bg-white">
     <header class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50">
@@ -157,43 +88,58 @@
     </div>
 
     <section>
-        <div class="wraper max-w-[1300px] mx-auto pt-5 grid grid-cols-12 gap-5">
-            <div class="sidebar col-span-3">
-                <div class="search_products bg-[#eee] p-5">
-                    <h2 class="text-xl mb-3">Tên sản phẩm</h2>
-                    <div class="relative">
-                        <input type="text" name="search" id="search" class="focus:outline-none w-full pl-7 py-1 text-sm">
-                        <i class="ri-search-line absolute left-1 top-1"></i>
-                    </div>
-                    <hr class="my-3">
-                    <h2 class="text-xl mb-3">Sắp xếp khoảng giá </h2>
-                    <div class="filter-price">
-                        <label for="rangePrice">Price Range:</label>
-                        
-                        <div class="range-container">
-                          <input type="range" id="minRange" class="price-range" min="0" max="10000" step="100" value="0">
-                          <input type="range" id="maxRange" class="price-range" min="0" max="10000" step="100" value="10000">
-                          
-                          <div class="range-values">
-                            <span id="minPriceLabel">0</span> VND - 
-                            <span id="maxPriceLabel">10000</span> VND
-                          </div>
-                        </div>
-                      
-                        <button id="filterBtn">Lọc</button>
-                      </div>
-                      
-                      <div id="productList">
-                        <!-- Các sản phẩm sẽ được hiển thị ở đây -->
-                      </div>
-                      
-                </div>
+      <div class="wraper max-w-[1300px] mx-auto pt-5 grid grid-cols-12 gap-5">
+        <div class="sidebar col-span-3">
+          <div class="search_products bg-[#eee] p-5">
+            <h2 class="text-xl mb-3">Tên sản phẩm</h2>
+            <div class="relative">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                class="focus:outline-none w-full pl-7 py-1 text-sm"
+              />
+              <i class="ri-search-line absolute left-1 top-1"></i>
             </div>
 
-            <div class="main col-span-9 bg-[#eee]">
-                s
+            <hr class="my-3" />
+
+            <h2 class="text-xl mb-3">Sắp xếp khoảng giá</h2>
+            <div id="productList">
+              <div class="increas flex items-center gap-3 mb-3">
+                <div
+                  class="square_price size-4 bg-white flex items-center border border-[#666666] text-[#fcb800] cursor-pointer"
+                >
+                  <i class="ri-check-line hidden check_price"></i>
+                </div>
+                <span class="cursor-pointer select-none text-sm"
+                  >Từ thấp đến cao</span
+                >
+              </div>
+
+              <div class="desc flex items-center gap-3">
+                <div
+                  class="square_price size-4 bg-white flex items-center border border-[#666666] text-[#fcb800] cursor-pointer"
+                >
+                  <i class="ri-check-line hidden check_price"></i>
+                </div>
+                <span class="cursor-pointer select-none text-sm"
+                  >Từ cao đến thấp</span
+                >
+              </div>
             </div>
+
+            <hr class="my-3" />
+
+            <h2 class="text-xl mb-3">Theo đánh giá</h2>
+            <div class="fillRating">
+
+            </div>
+          </div>
         </div>
+
+        <div class="main col-span-9 bg-[#eee]">s</div>
+      </div>
     </section>
 
     <section>
