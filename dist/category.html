@@ -20,11 +20,11 @@
 
 
     <title>Danh mục sản phẩm</title>
-    <script type="module" crossorigin src="/assets/category-Br3qM1oP.js"></script>
+    <script type="module" crossorigin src="/assets/category-umZhPhq7.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/service-Ccry4lSF.js">
     <link rel="modulepreload" crossorigin href="/assets/utils-ev9IYk3T.js">
     <link rel="stylesheet" crossorigin href="/assets/utils-Ck3l10TW.css">
-    <link rel="stylesheet" crossorigin href="/assets/category-17Bu-Y7E.css">
+    <link rel="stylesheet" crossorigin href="/assets/category-lnRqnEct.css">
   </head>
   <body class="bg-white">
     <header class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50">
@@ -89,7 +89,7 @@
 
     <section>
       <div class="wraper max-w-[1300px] mx-auto pt-5 grid grid-cols-12 gap-5">
-        <div class="sidebar col-span-3">
+        <div class="sidebar col-span-3 sticky top-9">
           <div class="search_products bg-[#eee] p-5">
             <h2 class="text-xl mb-3">Tên sản phẩm</h2>
             <div class="relative">
@@ -106,7 +106,7 @@
 
             <h2 class="text-xl mb-3">Sắp xếp khoảng giá</h2>
             <div id="productList">
-              <div class="increas flex items-center gap-3 mb-3">
+              <div class="increase flex items-center gap-3 mb-3">
                 <div
                   class="square_price size-4 bg-white flex items-center border border-[#666666] text-[#fcb800] cursor-pointer"
                 >
@@ -132,13 +132,27 @@
             <hr class="my-3" />
 
             <h2 class="text-xl mb-3">Theo đánh giá</h2>
-            <div class="fillRating">
-
-            </div>
+            <div class="fillRating"></div>
           </div>
         </div>
 
-        <div class="main col-span-9 bg-[#eee]">s</div>
+        <div class="col-span-9 ">
+          <div class="bg-[#eee] flex justify-between items-center px-3 py-4 mb-5 nav_main">
+            <p class="text-md text-[#666666]">
+              <span id="number_product" class="font-bold text-black"></span>
+              Sản phẩm được tìm thấy
+            </p>
+            <div class="flex gap-5 items-center">
+              <span class="">View</span>
+              <i class="ri-gallery-view text-2xl cursor-pointer text-[#292828]"></i>
+              <i class="ri-list-view text-2xl cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="main grid grid-cols-4 gap-y-2">  
+
+          </div>
+          <div class="col-span-4 mt-3 text-center pagination"></div>
+        </div>
       </div>
     </section>
 

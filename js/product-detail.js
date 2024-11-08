@@ -20,7 +20,7 @@ const path = document.querySelector(".path");
 function renderpath(data) {
   path.innerHTML = /*html*/ `
         <a href="../index.html" class="text-[#09c] hover:text-[#fcb800] transition-colors">Home</a> /
-        <a href="../pages/category.html?category=${data.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${data.category}</a> /
+        <a href="./category.html?category=${data.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${data.category}</a> /
         <span>${data.title}</span>
 
     `;

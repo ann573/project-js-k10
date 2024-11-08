@@ -1,6 +1,6 @@
 import{a as x,g as v}from"./service-Ccry4lSF.js";import{g as y}from"./utils-ev9IYk3T.js";const f=document.getElementById("search-input"),a=document.getElementById("search-results");document.querySelector(".title_product");const p=document.getElementById("overlay"),b=document.querySelector(".path");(async()=>{const e=await x("products",y("id"));w(e),L(e),S(e),E(e),T(e)})();function w(e){b.innerHTML=`
         <a href="../index.html" class="text-[#09c] hover:text-[#fcb800] transition-colors">Home</a> /
-        <a href="../pages/category.html?category=${e.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${e.category}</a> /
+        <a href="./category.html?category=${e.category}" class="text-[#09c] hover:text-[#fcb800] transition-colors capitalize">${e.category}</a> /
         <span>${e.title}</span>
 
     `}function L(e){const i=document.querySelector(".main"),n=document.querySelector(".title_product");let s=h(e);for(n.innerHTML=`

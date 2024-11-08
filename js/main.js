@@ -110,7 +110,7 @@ function renderHotSale(data) {
 
 function renderHotItem(page, data) {
   const hotItem = document.querySelector(".hot_item");
-  hotItem.innerHTML = ""; // Xóa nội dung cũ
+  hotItem.innerHTML = ""; 
 
   const start = (page - 1) * productsPerPage;
   const end = start + productsPerPage;
