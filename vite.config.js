@@ -1,11 +1,16 @@
-export default {
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
+
+export default defineConfig({
   build: {
+    outDir: 'dist',  // Đầu ra cho thư mục `dist`
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: 'index.html',  // Tệp index chính
-        page1: 'pages/category.html', // Thêm page1.html vào quá trình build
-        page2: 'pages/product-detail.html'  // Thêm page2.html vào quá trình build
+        index: resolve(__dirname, './index.html'),
+        category: resolve(__dirname, './category.html'),
+        "product-detail": resolve(__dirname, './product-detail.html')
       }
     }
   }
-};
+})

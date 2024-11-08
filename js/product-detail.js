@@ -91,9 +91,13 @@ function renderInformartion(data) {
   <span class="text-sm text-gray-800 font-light">(${
     data.discountPercentage
   }%)</span></p>
-  <p class="text-[15px] my-3">Status: <span class="text-green-800 font-semibold">${
-    data.availabilityStatus
-  }</span></p> 
+  <p class="text-[15px] my-3">
+  Status: ${data.availabilityStatus === "In Stock" 
+    ? `<span class="text-green-800 font-semibold">${data.availabilityStatus}</span>`
+    : `<span class="text-red-500 font-semibold">${data.availabilityStatus}</span>`
+  }
+</p>
+
   <hr/>
   <ul class="list-disc list-inside text-[#666666] text-[14px] my-3">
     <li class="py-1">
@@ -114,11 +118,11 @@ function renderInformartion(data) {
     ", "
   )}</span></p>
   <form method="#">
-  <div class="flex space-x-4 border box-border w-[5.5rem]">
+  <div class="flex gap-1 border box-border w-[5.5rem]">
   <button id="minus" class="bg-gray-200 text-gray-700 p-2 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   -
 </button>
-  <input type="tel" min="1" value="1" class="w-full" />
+  <input type="number" min="1" max="${data.stock}" value="1" class="remove-arrow w-full text-center focus:outline-none"/>
 <button id="plus" class="bg-gray-200 text-gray-700 p-2  hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   +
 </button>
@@ -131,13 +135,15 @@ function renderInformartion(data) {
   </form>
   `;
   main.appendChild(information);
-
   const plusBtn = document.querySelector("#plus")
   const minusBtn = document.querySelector("#minus")
-  const quantity = document.querySelector("input[type='tel']")
+  const quantity = document.querySelector("input[type='number']")
   plusBtn.addEventListener("click", ()=>{
     event.preventDefault()
     quantity.value++
+    if (quantity.value >= data.stock){
+      quantity.value = data.stock
+    }
   })
   minusBtn.addEventListener("click", ()=>{
     event.preventDefault()

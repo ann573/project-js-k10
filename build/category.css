@@ -1,0 +1,25 @@
+@import 'tailwind.css';
+#search-results {
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+#search-results i{
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    color: red;
+    font-size: 40px;
+    z-index: 999999;
+}
+.result-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: rgba(102, 102, 102, 0.238); 
+}
+.result-item img{
+    width: 50px;
+    margin-right: 30px;
+}

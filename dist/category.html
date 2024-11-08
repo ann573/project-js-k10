@@ -17,26 +17,93 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
 
-
 
-    <title>Document</title>
-    <script type="module" crossorigin src="/assets/page2-sfaJeV8_.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="/assets/service-CGqyXxcI.js">
-    <link rel="modulepreload" crossorigin href="/assets/utils-D9frBmc6.js">
-    <link rel="stylesheet" crossorigin href="/assets/page2-C6qeT2rb.css">
+    <!-- <style>
+        .filter-price {
+  margin: 20px 0;
+}
+
+.range-container {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+
+.price-range {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10px; /* Tăng độ cao để dễ dàng chỉnh sửa */
+  background: #ddd;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1; /* Đảm bảo thanh trượt không bị che khuất */
+}
+
+.price-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px; /* Đảm bảo chiều cao của track phù hợp */
+  background: #ddd;
+}
+
+.price-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+  position: relative; /* Quan trọng: Đảm bảo dấu chấm không bị lệch */
+  z-index: 2; /* Đảm bảo dấu chấm luôn ở trên */
+}
+
+
+/* Cập nhật vị trí của giá trị hiển thị */
+.range-values {
+  position: absolute;
+  top: 20px;  /* Đảm bảo các giá trị không bị chồng lên nhau */
+  left: 0;
+  font-weight: bold;
+}
+
+.range-values span {
+  margin-right: 5px;
+}
+
+/* Sửa style để tránh chồng lên nhau */
+#minRange {
+  z-index: 1; /* Đảm bảo minRange luôn ở dưới */
+}
+
+#maxRange {
+  z-index: 2; /* Đảm bảo maxRange luôn ở trên */
+}
+
+/* Đảm bảo range có đủ khoảng cách */
+.range-container {
+  position: relative;
+  height: 40px; /* Đảm bảo không gian cho các dấu chấm */
+}
+
+
+    </style> -->
+    <title>Danh mục sản phẩm</title>
+    <script type="module" crossorigin src="/assets/category-BUsKFAum.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/service-Ccry4lSF.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-ev9IYk3T.js">
+    <link rel="stylesheet" crossorigin href="/assets/utils-Ck3l10TW.css">
+    <link rel="stylesheet" crossorigin href="/assets/category-ktTHcA5O.css">
   </head>
   <body class="bg-white">
-    <header
-      class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50"
-    >
+    <header class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50">
       <div class="max-w-[1300px] mx-auto grid grid-cols-12 gap-5 py-5 px-10">
         <div class="logo col-span-3 text-center flex justify-center">
           <a href="../index.html">
             <img
               class="site-logo"
               alt="Đồ công nghệ"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANcAAAAkCAYAAAFtfJ+UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMzcwODEwQjIzQkUxMUVEOTJGRjlBQkNBQjM5M0E5RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMzcwODEwQzIzQkUxMUVEOTJGRjlBQkNBQjM5M0E5RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIzNzA4MTA5MjNCRTExRUQ5MkZGOUFCQ0FCMzkzQTlEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIzNzA4MTBBMjNCRTExRUQ5MkZGOUFCQ0FCMzkzQTlEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Riq/dQAACkpJREFUeNpi+P//PwMQ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"
+              src="../assests/img/logo-trustmart.png"
             />
           </a>
         </div>
@@ -89,73 +156,44 @@
       <div class="max-w-[1300px] mx-auto pt-[100px] pb-5 text-sm path"></div>
     </div>
 
-    <section class="max-w-[1300px] mx-auto pt-5">
-      <div class="title_product"></div>
-      <hr class="my-2" />
-      <div class="main grid grid-cols-5 gap-7"></div>
-    </section>
-
-    <section class="max-w-[1300px] mx-auto mt-20">
-      <hr class="mb-10" />
-      <div class="grid grid-cols-6 gap-5">
-        <div class="number_rating col-span-2"></div>
-
-        <form action="#" id="form_rating" class="col-span-4 ">
-          <h3 class="font-bold text-xl">Thêm lời nhận xét</h3>
-          <p class="text-[#666666] text-sm my-2">
-            Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc
-            được đánh dấu <span class="text-red-500">*</span>
-          </p>
-          <div class="flex items-center gap-5">
-            <p class="text-sm ">Đánh giá của bạn về sản phẩm: 
-            </p>
-            <fieldset class="starability-basic">
-              <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
-              <input type="radio" id="first-rate1" name="rating" value="1" />
-              <label for="first-rate1" title="Terrible">1 star</label>
-              <input type="radio" id="first-rate2" name="rating" value="2" />
-              <label for="first-rate2" title="Not good">2 stars</label>
-              <input type="radio" id="first-rate3" name="rating" value="3" />
-              <label for="first-rate3" title="Average">3 stars</label>
-              <input type="radio" id="first-rate4" name="rating" value="4" />
-              <label for="first-rate4" title="Very good">4 stars</label>
-              <input type="radio" id="first-rate5" name="rating" value="5" />
-              <label for="first-rate5" title="Amazing">5 stars</label>
-            </fieldset>
-          </div>
-          <textarea
-            name="reviews"
-            id=""
-            cols="102"
-            rows="10"
-            class="border resize-none p-3 focus:outline-[#66666658]"
-            placeholder="Hãy viết lời nhận xét của bạn"
-          ></textarea>
-          <div class="flex gap-5 my-5">
-            <div class="flex flex-col w-1/2">
-              <label for="name">Name <span class="text-red-500">*</span></label>
-              <input type="text" class="p-3 border focus:outline-[#66666658]">
+    <section>
+        <div class="wraper max-w-[1300px] mx-auto pt-5 grid grid-cols-12 gap-5">
+            <div class="sidebar col-span-3">
+                <div class="search_products bg-[#eee] p-5">
+                    <h2 class="text-xl mb-3">Tên sản phẩm</h2>
+                    <div class="relative">
+                        <input type="text" name="search" id="search" class="focus:outline-none w-full pl-7 py-1 text-sm">
+                        <i class="ri-search-line absolute left-1 top-1"></i>
+                    </div>
+                    <hr class="my-3">
+                    <h2 class="text-xl mb-3">Sắp xếp khoảng giá </h2>
+                    <div class="filter-price">
+                        <label for="rangePrice">Price Range:</label>
+                        
+                        <div class="range-container">
+                          <input type="range" id="minRange" class="price-range" min="0" max="10000" step="100" value="0">
+                          <input type="range" id="maxRange" class="price-range" min="0" max="10000" step="100" value="10000">
+                          
+                          <div class="range-values">
+                            <span id="minPriceLabel">0</span> VND - 
+                            <span id="maxPriceLabel">10000</span> VND
+                          </div>
+                        </div>
+                      
+                        <button id="filterBtn">Lọc</button>
+                      </div>
+                      
+                      <div id="productList">
+                        <!-- Các sản phẩm sẽ được hiển thị ở đây -->
+                      </div>
+                      
+                </div>
             </div>
-            <div class="flex flex-col w-1/2">
-              <label for="email">Email <span class="text-red-500">*</span></label>
-              <input type="email"  class="p-3 border focus:outline-[#66666658]">
+
+            <div class="main col-span-9 bg-[#eee]">
+                s
             </div>
-          </div>
-          <input type="submit" value="Đăng" class="bg-[#fcb800] py-3 px-10 font-bold rounded-md cursor-pointer" >
-        </form>
-      </div>
-
-      <div class="mt-5">
-        <h4 class="total_reviews bg-[#9f9b9b3e] py-4 px-4 font-medium"></h4>
-        <div class="user-review ">
-
         </div>
-      </div>
-    </section>
-
-    <section class="max-w-[1300px] mx-auto mt-20 mb-10">
-      <h3 class="uppercase bg-[#9f9b9b3e] text-center text-xl font-bold py-5">SẢn phẩm tương tự</h3>
-      <div class="grid grid-cols-5 gap-5 px-5 my-5 same_products "></div>
     </section>
 
     <section>

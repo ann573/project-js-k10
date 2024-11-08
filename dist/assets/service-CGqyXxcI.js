@@ -1,1 +1,0 @@
-const s="https://dummyjson.com";async function n(a){try{return await(await fetch(`${s}/${a}`)).json()}catch(t){console.log(t)}}async function r(a,t){try{return await(await fetch(`${s}/${a}/${t}`)).json()}catch(o){console.log(o)}}export{r as a,n as g};
