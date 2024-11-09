@@ -52,7 +52,7 @@ function renderInformartion(data) {
   let wrap = "";
   data.images.forEach((item) => {
     wrap += `
-      <div><img src="${item}" class="w-full transition-transform hover:scale-110" alt="Slide 1"></div>
+      <div><img src="${item}" class="size-[504px] object-contain transition-transform hover:scale-110" alt="Slide 1"></div>
     `;
   });
   slideElement.innerHTML = wrap;
