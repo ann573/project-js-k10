@@ -122,7 +122,7 @@ function renderInformartion(data) {
   <button id="minus" class="bg-gray-200 text-gray-700 p-2 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   -
 </button>
-  <input type="number" min="1" max="${data.stock}" value="1" class="remove-arrow w-full text-center focus:outline-none"/>
+  <input type="number" min="1" max="${data.stock}" value="0" class="remove-arrow w-full text-center focus:outline-none"/>
 <button id="plus" class="bg-gray-200 text-gray-700 p-2  hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   +
 </button>
@@ -181,11 +181,9 @@ function renderReviews(data){
   data.reviews.forEach((item)=>{
     const date = new Date(item.date);
 
-// Lấy ngày, tháng và năm
-const day = date.getDate(); // Lấy ngày (1-31)
-const month = date.getMonth() + 1; // Lấy tháng (0-11) và cộng thêm 1 để có tháng thực (1-12)
-const year = date.getFullYear(); // Lấy năm
-// Định dạng lại thành "ngày/tháng/năm"
+const day = date.getDate(); 
+const month = date.getMonth() + 1; 
+const year = date.getFullYear(); 
 const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
     content += /*html */ `
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
@@ -194,12 +192,13 @@ const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month 
         </div>
         <div>
           <p>${renderStar(item)}</p>
-          <div class="flex my-5">
-            <p class="text-sm text-[#666666]">By ${item.reviewerName} | <span class="ml-3">${formattedDate}</span></p>
+          <div class="flex mt-1 mb-5">
+            <p class="text-sm text-[#666666] ">By <span class="cursor-pointer hover:text-blue-400">${item.reviewerName}</span> | <span class="ml-3">${formattedDate}</span></p>
           </div>
           <p>${item.comment}</p>
         </div>
       </div>
+      <hr>
     `
   })
   reviews.innerHTML = content
