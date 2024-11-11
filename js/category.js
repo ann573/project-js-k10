@@ -16,9 +16,18 @@ let isIncreas = false;
 let isDesc = false;
 let currentPage = 1;
 let rating;
-const data = await getAll(`products/category/${getParams("category")}`);
 
-const updateClasses = () => {
+(async () => {
+  const data = await getAll(`products/category/${getParams("category")}`);
+  console.log(data);
+  numberProduct.textContent = data.products.length;
+  renderpath();
+  checkboxPrice(data);
+  renderFillByRating(data);
+  updateClasses(data); 
+})();
+
+const updateClasses = (data) => {
   searchProduct.value="";
   isGallery = !isGallery;
   gallery.classList.toggle("text-[#292828]", isGallery);
@@ -28,24 +37,17 @@ const updateClasses = () => {
   if (isDesc) renderProductDesc(data.products)
   else if (isIncreas) renderProductIncrease(data.products)
   else renderProducts(currentPage, data.products);
+
+  gallery.addEventListener("click", () => updateClasses(data));
+  list.addEventListener("click", () => updateClasses(data));
 };
 
-gallery.addEventListener("click", () => updateClasses());
-list.addEventListener("click", () => updateClasses());
 
 searchProduct.addEventListener("input", function(e){
     const datafilter = data.products.filter((item)=> item.title.toLowerCase().includes(e.target.value.toLowerCase()))
     renderProducts(currentPage, datafilter)
 });
 
-(async () => {
-  console.log(data);
-  numberProduct.textContent = data.products.length;
-  renderpath();
-  checkboxPrice(data);
-  renderFillByRating();
-  updateClasses(true); 
-})();
 
 function renderpath() {
   path.innerHTML = /*html*/ `
@@ -100,7 +102,8 @@ function renderProductDesc(data){
     renderProducts(currentPage, newData)
 }
 
-function renderFillByRating() {
+function renderFillByRating(data) {
+  // Tạo các div và sao theo số lượng sao (1-5)
   for (let i = 1; i <= 5; i++) {
     let star = "";
     const divElement = document.createElement("div");
@@ -120,6 +123,7 @@ function renderFillByRating() {
       </div>
     `;
 
+    // Render các sao
     for (let j = 1; j <= i; j++) {
       star += `<span class="text-[gold] mr-1">★</span>`;
     }
@@ -131,29 +135,39 @@ function renderFillByRating() {
     divElement.innerHTML = checkboxHTML + star;
     fillByRating.appendChild(divElement);
   }
+
+  // Gán sự kiện cho các phần tử check_star ngay sau khi render xong
+  const checkStar = document.getElementsByClassName("check_star");
+  Array.from(checkStar).forEach((item, index) => {
+    item.addEventListener("click",() => iconCheck(item, index, data));
+  });
 }
 
-const checkStar = document.getElementsByClassName("check_star")
-Array.from(checkStar).forEach((item, index)=>{
-  item.addEventListener("click", function(){
-    const eFined =  Array.from(checkStar).find((element)=>element.children[0].children[0].style.display === "block")
-    if(eFined) eFined.children[0].children[0].style.display = "none";
-    if(eFined !== this)
-    {
-      if (this.children[0].children[0].style.display === "block") {
-        this.children[0].children[0].style.display = "none";
-      } else {
-        this.children[0].children[0].style.display = "block";
-      }
-    }
-    if (!eFined || eFined !== this) renderProductsByStar(index)
-    else renderProducts(currentPage, data.products)
-  })
-})
+function iconCheck(item, index, data){
+  const checkedIcon = item.querySelector(".ri-check-line");
 
-function renderProductsByStar(index){
-  rating = index
-  const newData = data.products.filter((item) => Math.floor(item.rating) === rating + 1)
+      // Nếu thẻ <i> hiện tại đang bị ẩn (hidden), thì hiển thị nó (block), ngược lại thì ẩn đi
+      if (checkedIcon.classList.contains("hidden")) {
+        checkedIcon.classList.remove("hidden");
+        checkedIcon.classList.add("block");
+      } else {
+        checkedIcon.classList.remove("block");
+        checkedIcon.classList.add("hidden");
+        renderProductsByStar(-1, data);
+        return
+      }
+
+      renderProductsByStar(index, data);
+}
+
+function renderProductsByStar(index, data){
+  let newData;
+  if (index === -1){
+  newData = [...data.products]
+  } else {
+    rating = index
+    newData = data.products.filter((item) => Math.floor(item.rating) === rating + 1)
+  }
   if (isDesc) renderProductDesc(newData)
   else if (isIncreas) renderProductIncrease(newData)
   else renderProducts(currentPage, newData)

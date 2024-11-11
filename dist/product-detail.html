@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+
+
+    <title>Document</title>
+    <script type="module" crossorigin src="/assets/product-detail-C1UaiwC3.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/service-Ccry4lSF.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-ev9IYk3T.js">
+    <link rel="stylesheet" crossorigin href="/assets/utils-Ck3l10TW.css">
+    <link rel="stylesheet" crossorigin href="/assets/product-detail-DDOD0xC0.css">
+  </head>
+  <body class="bg-white">
+    <header class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50">
+      <div class="max-w-[1300px] mx-auto grid grid-cols-12 gap-5 py-5 px-10">
+        <div class="logo col-span-3 text-center flex justify-center">
+          <a href="../index.html">
+            <img
+              class="site-logo"
+              alt="Đồ công nghệ"
+              src="../assests/img/logo-trustmart.png"
+            />
+          </a>
+        </div>
+        <div class="search col-span-5 flex items-center">
+          <div class="search_input flex items-center w-full relative">
+            <i class="ri-search-line absolute left-2"></i>
+            <input
+              type="text"
+              name="search"
+              placeholder="Tìm kiếm sản phẩm"
+              class="outline-none border border-[#eee] w-full py-2 px-8 rounded-xl"
+              id="search-input"
+            />
+            <div
+              id="search-results"
+              class="hidden absolute top-[150%] w-full bg-white shadow-lg z-20"
+            ></div>
+          </div>
+        </div>
+        <div class="col-span-2 flex items-center justify-end gap-2">
+          <i class="ri-phone-line text-3xl"></i>
+          <div class="text flex flex-col">
+            <span class="text-sm">Hotline</span>
+            <span class="font-semibold">1900.88.8888</span>
+          </div>
+        </div>
+        <div class="relative flex items-center justify-center cursor-pointer">
+          <i class="ri-shopping-basket-line text-3xl"></i>
+          <p
+            class="absolute top-0 left-14 bg-black rounded-lg text-[#fff] text-xs size-5 flex justify-center items-center"
+          >
+            0
+          </p>
+        </div>
+        <div class="flex items-center">
+          <button
+            class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </header>
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black opacity-50 hidden z-40"
+    ></div>
+
+    <div class="bg-[#eee]">
+      <div class="max-w-[1300px] mx-auto pt-[100px] pb-5 text-sm path"></div>
+    </div>
+
+    <section class="max-w-[1300px] mx-auto pt-5">
+      <div class="title_product"></div>
+      <hr class="my-2" />
+      <div class="main grid grid-cols-5 gap-7"></div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto mt-20">
+      <hr class="mb-10" />
+      <div class="grid grid-cols-6 gap-5">
+        <div class="number_rating col-span-2"></div>
+
+        <form action="#" id="form_rating" class="col-span-4">
+          <h3 class="font-bold text-xl">Thêm lời nhận xét</h3>
+          <p class="text-[#666666] text-sm my-2">
+            Email của bạn sẽ không được hiển thị công khai. Các trường bắt buộc
+            được đánh dấu <span class="text-red-500">*</span>
+          </p>
+          <div class="flex items-center gap-5">
+            <p class="text-sm">Đánh giá của bạn về sản phẩm:</p>
+            <fieldset class="starability-basic">
+              <input
+                type="radio"
+                id="no-rate"
+                class="input-no-rate"
+                name="rating"
+                value="0"
+                checked
+                aria-label="No rating."
+              />
+              <input type="radio" id="first-rate1" name="rating" value="1" />
+              <label for="first-rate1" title="Terrible">1 star</label>
+              <input type="radio" id="first-rate2" name="rating" value="2" />
+              <label for="first-rate2" title="Not good">2 stars</label>
+              <input type="radio" id="first-rate3" name="rating" value="3" />
+              <label for="first-rate3" title="Average">3 stars</label>
+              <input type="radio" id="first-rate4" name="rating" value="4" />
+              <label for="first-rate4" title="Very good">4 stars</label>
+              <input type="radio" id="first-rate5" name="rating" value="5" />
+              <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+          </div>
+          <textarea
+            name="reviews"
+            id=""
+            cols="102"
+            rows="10"
+            class="border resize-none p-3 focus:outline-[#66666658]"
+            placeholder="Hãy viết lời nhận xét của bạn"
+          ></textarea>
+          <div class="flex gap-5 my-5">
+            <div class="flex flex-col w-1/2">
+              <label for="name">Name <span class="text-red-500">*</span></label>
+              <input type="text" class="p-3 border focus:outline-[#66666658]" />
+            </div>
+            <div class="flex flex-col w-1/2">
+              <label for="email"
+                >Email <span class="text-red-500">*</span></label
+              >
+              <input
+                type="email"
+                class="p-3 border focus:outline-[#66666658]"
+              />
+            </div>
+          </div>
+          <input
+            type="submit"
+            value="Đăng"
+            class="bg-[#fcb800] py-3 px-10 font-bold rounded-md cursor-pointer"
+          />
+        </form>
+      </div>
+
+      <div class="mt-5">
+        <h4 class="total_reviews bg-[#9f9b9b3e] py-4 px-4 font-medium"></h4>
+        <div class="user-review"></div>
+      </div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto mt-20 mb-10">
+      <h3 class="uppercase bg-[#9f9b9b3e] text-center text-xl font-bold py-5">
+        SẢn phẩm tương tự
+      </h3>
+      <div class="grid grid-cols-5 gap-5 px-5 my-5 same_products"></div>
+    </section>
+
+    <section>
+      <div
+        class="max-w-[1300px] mx-auto flex justify-between items-center py-14"
+      >
+        <div class="title">
+          <h4 class="font-bold text-xl">Đăng ký nhận tin</h4>
+          <p class="text-[#666666] mt-3">
+            Đăng ký để nhận thông tin về sản phẩm và phiếu giảm giá
+          </p>
+        </div>
+
+        <form action="#" class="w-3/6">
+          <input
+            type="email"
+            placeholder="Địa chỉ email"
+            class="w-10/12 outline-none px-5 py-3 border border-gray-300 rounded-s-xl"
+          />
+          <input
+            type="submit"
+            name="email_infor"
+            value="Đăng ký"
+            class="bg-[#fcb800] text-black px-5 py-[12.5px] h-full relative right-1 cursor-pointer rounded-e-xl font-semibold"
+          />
+        </form>
+      </div>
+      <hr />
+    </section>
+    <footer class="bg-white pb-5">
+      <div class="max-w-[1300px] mx-auto grid grid-cols-5">
+        <div class="col-span-2">
+          <h5 class="text-xl font-semibold my-3">Liên hệ chúng tôi</h5>
+          <p class="text-[#fcb800] font-bold text-3xl mb-5">1900.88.8888</p>
+          <p class="text-[#666] text-sm leading-6 mb-5">
+            Trần Duy Hưng, Cầu Giấy, Hà Nội <br />
+            contact@webdemo.com
+          </p>
+          <ul class="flex gap-4">
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-facebook-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-twitter-x-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-telegram-2-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-github-line"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xl font-semibold my-3">Liên kết nhanh</h5>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+              >
+                Cookware
+              </a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Groceries</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Laptops</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Vehicle</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Smartphones</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xl font-semibold my-3">Về công ty</h5>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Cookware</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Garden Tools</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Garden Equipments</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Utensil & Gadget</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Powers And Hand Tools</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xl font-semibold my-3">Kinh doanh</h5>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Womens Jewellery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+              >
+                Sunglasses</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Mens Shirts</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Mens Watches</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Motorcycle</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+    <title>Trust Mart</title>
+    <script type="module" crossorigin src="/assets/index-Cb04MFDL.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/service-Ccry4lSF.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-C23899J_.css">
+  </head>
+  <body class="bg-[#eeeeee]">
+    <header class="w-full shadow-lg bg-[#fcb800] fixed top-0 left-0 z-50">
+      <div class="max-w-[1300px] mx-auto grid grid-cols-12 gap-5 py-5 px-10">
+        <div class="logo col-span-3 text-center flex justify-center">
+          <a href="../index.html">
+            <img
+              class="site-logo"
+              alt="Đồ công nghệ"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANcAAAAkCAYAAAFtfJ+UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMzcwODEwQjIzQkUxMUVEOTJGRjlBQkNBQjM5M0E5RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMzcwODEwQzIzQkUxMUVEOTJGRjlBQkNBQjM5M0E5RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIzNzA4MTA5MjNCRTExRUQ5MkZGOUFCQ0FCMzkzQTlEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIzNzA4MTBBMjNCRTExRUQ5MkZGOUFCQ0FCMzkzQTlEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Riq/dQAACkpJREFUeNpi+P//PwMQ7EfCRAOg3v1I7PUE1EIIqIX/SbEHasB/JMP+E7DsPxMug4gVh1nCCATIfGyWM5HgG0aohQJo4h/QDQZyHXCGJVow/kfzzXkkNrKaAGy++I8E0EMAIIDQE0cCiQmkAFtiwZtASE2F2BIFvgQCcghIGl8C+Y8j+BCRiJYo8DkGVwJpxJE4DHAYuB5mKSEfMhGTn6DgPA7xAEI+AoKFIGGAAGJASyTvoQaRlWBIcDgDthSLT5zYEg2uHZbNkDz4H4uD3uNLJ1iy5n8s6mHYAS07zkfzlAKubIvuaXQxFD6RHttPoJTE5rH7hGIMV07FVvghxQbOnI0cY8SWwgfxyN1Hc/wDaKZUhPL78RbtQABzMHJmRXY8UPgAEDtik8cFAAKIkUCZ6MhAAwArsEGOxSF3AShXSKbZYJoFTRyU/g8w0Ab8hwYkzB5sjgrAJUdCBcSIUkeT0dwhu1SEFRrY6nEoILtmhfmFiUgHkVsiGuCoiWH1DbGORQYCSAXFeyyl5X9SmnCMSMmIWLWJSBUtIxqN7HCYQ0GFzAYsSQuU3xiRCo73SEoEGJEAsh1MNEpyyKUjPpCI5NACoNsC0UtMIDAE+q+B1Eqb2h6DxdYBHHUielG/gEAyvI/egyAWsJDpgQD0ZINW8jkS6AZhK+InYJFSINVDlHgM1EpeT2Sb8AKeIh8GQMlvPbY6DaQfLQmCkrcCMdUKQABurLaIQRiGlilAAhJwMCRsDooD5mAWpqBzgIRKYA6GA3DA1l17F3pNCFD2lbv9Ib0V+pqX9wJpfu7vLL4zCsoYY5aRycr6nR9irJMvfYWvgwN6eBC/FQMXMGgskPXdpwCDmh/isot8QCEnJhjAU/k7UuHpxH+M3B8i7SVxYNLucWMcrhrC0Tn5gYBhunPj6ypb/UXw2yJUGDxEp58ydEM+YIoBzrCwwoxrlRQ1IrZcE0Dl/lAN5BqieqAzUFMVFhOwbmEFYfkaPK8jU6I/c6mRdekaK0WMWPVUH92SEl1cItP40Sqv1srSEC2umgwCCXoA4Lhbfn2mewYoDUKHm/T+LZzY3MiR55kFpARGKAGzL0eb5wgX42VdLWjSglkypyvm/U9JIP4BML8faTEe0MOQFhCzpgoYQReYS62YVWYMZQ/nDQsOe+/POSJUWIsOFiP1sKmbXhFejtqnnkmHPn0qrIch/aYicpqpELtA/8vm9DA4EoEs+xCAW2uxbRAGoq7UAcgGHoFOUGcDRkg3yAZNJ8gIdIOqE8AGyQZkg2QDKiQTWRffDwyBnhQJCWyIH+/u8c6cs03F1qwovKuXB8zaCsdV2jGJnxuVx5rfUuMUez4oo6EExwCeWkAQ97ZQHb4avJXiAr/sthYCKa7tGLMRpO9nRaOpW5Q7sHQrSsKsVvB2t09k1qTfXasL3yRFjVZ/WC/pgccwywGFFr7Ze4FlxJ3fIfWyZOZ5mBMwq3e8r4I32zF2lY0YwqSRDD3CUHHGMsBdxSYECzNhh4J1ZATOdQRYmQAAFqzQdySi4dJrEIc5wbLB95EZCRbGojJyP1XNAgtWEJbSjgGrxRhK1ToAwr43hLmalRKs/YA0JwGLGnMcAdYPt9D+2CEGbSFlJwFWoxEYKcEyE4HVmsge0TFqMLSGIiDkErA0io4AYvdf1GCN2E7HFJOHDjtYtAqYvRJQMt/XqpRSv9aiv1RmGe8fSgWGilkgFbYYG5ialQsExqAN2Wv8zurA6lskcC9/ZugmqCQ+oLrzh1LH5gRY0u3U3UzWLlkws5zB3fyToM6xzIL1I+YbEgKjYgSGS82sOcCqBoCVM2NcQrBKKm0RYEX3XQTnG6wtowTLzpkGf4FQ6MMSYJwZc7ZKUrBNtDt8Fg6tgxcrZlXZROv3OWcaNGZY26UQXJ8JBAmbtgCxrDadCeIwgln3OeYSGC+Ron0z9M75ru3+hpy7IHMezLB2znfAtItiHNZi+fIC4/LADnnA//7+J0B7V2CdOAxDdfduALoBneC4CZqboHQCwgSXTtBsQDYINwHtBIEJoBPABuQm4HCf/DCu7Fi2IYGi9/r6XpM4sWX5S9+yGpJi7fuTw018RHiqa0enseJwlQHOqS10qa5dIbjqrk3o9P02ZzstpcZpx/Bb+piSEkOqr6YQJKu26HZUVp2YrM4xWe0SEwAuSpfgka7UgFzGDSLmJCsb2q+u1Liosb0h1xeXmkBF3wmWQtzSJFcpP1p+f4+gbuYKNfVHuS4mxwKD2ZpgVUJoqNDnB8i+/CQYlgXSWXPH4D1hXnfN8RQUm0r9if240uVghmZYPcIwxyHGqscx2EdqLI/G0+UEkBofau1tJBmCi8Wjcl20/yYKuRDP9px10rJbmBjaaiJF0hjuU+DzpSehswXzCSgfcilxdF0SQ3LWkDn59bYzlU7luoX4Tdudv2wdM+MrIrFs6ZKo5uhm62PdOnK5BMkrXC1k4DgF82mtc0hiCOTFKijo6Hc4ULri3pEW9Iq+LBHJqHMq6h75S8N1ANMJL0JELZa90h/hOCWpBLocChnMa8YsKu0UxgKM9rbEmJiYSzmOc83DGREEwsd47tsTxx0Lxie8EG7zSuuf1M9fOJRDo76B1kkHkUsWn+udOvD3fH4JzZttpkVDfy47Rb9MyCXdOm4REWkMlnpcLOQyfMPO1UhlhSnOaRIL+mTMReHiCY3f0N2zYhT16hLcj3GFG2P/xKZjce6PxzhFj7NSWyKqwaMYc2IeIkadIjJJ5H2WMY5DH/JIwzFloh0bnruGXD4U7jmRK3WIg2aISv1Q9cRGLuWemQmJiPYmNqQLibk4biQePZiYYqXQMYmNXF00rknHjUuNm7jkwxr71++AcVGu2Yxoa6gTCBTDF2JcSGosd4HCHRNPI79ot/AfdF9qdOtkov6TYYuAcikzONT0S9vqgME9HBLuIUW7x0CigZLpUDYwqCphJA4c3F/AHLltIkeSV5x0d3BcQOxOMTxKypYNjGJeS4WomGlkTYF1sUINK0Xk7xGs2903Wu5FCW0RIzGTdW/GFQFJfCVj3stxY2vF8CTC6TJqc+BwE7kmDEwYgErZb3z/oYRhUdG/Q0juWBoyuxnX+WTuwG6ZlMyJ8Qr4vK+UMQz0kfjbG7Nfp5BP7iFhAE8R31dThIUj6hl15kNQRJLkmo3r2UKWbJG9y1EpKhHh45L9IibHRCEscpycCf7OLTFWAXw6XpYKr7Dd4AmFrt7UNr77e1Yn1tcayYKhNDQkXRJkCGV8lrY81xaGhXwNh3K2mbT2rrGFeaC7wWHvpN/vw8ql4H+mrQK3jec+HP9rO6fzcb60syENaenwHJstbChoZk1JsqRyLS3vi8UW9ogSup9Y14+yutx37FewATExfAuEUom7G2Ck9FhEoMaD1v4GV55X7XuTQJesD4dk0wHhAr3jO31Xf1kB/UEb+xW2PdWZOEpHTfEMIkbf4zlKj7Ur2uF7h0T/JFKsKCKF873UmLhuWlv6PITjhF85x4ROiv/NeBnmtOM3iAAAAABJRU5ErkJggg=="
+            />
+          </a>
+        </div>
+        <div class="search col-span-5 flex items-center">
+          <div class="search_input flex items-center w-full relative">
+            <i class="ri-search-line absolute left-2"></i>
+            <input
+              type="text"
+              name="search"
+              placeholder="Tìm kiếm sản phẩm"
+              class="outline-none border border-[#eee] w-full py-2 px-8 rounded-xl"
+              id="search-input"
+            />
+            <div
+              id="search-results"
+              class="hidden absolute top-[150%] w-full bg-white shadow-lg z-20"
+            ></div>
+          </div>
+        </div>
+        <div class="col-span-2 flex items-center justify-end gap-2">
+          <i class="ri-phone-line text-3xl"></i>
+          <div class="text flex flex-col">
+            <span class="text-sm">Hotline</span>
+            <span class="font-semibold">1900.88.8888</span>
+          </div>
+        </div>
+        <div class="relative flex items-center justify-center cursor-pointer">
+          <i class="ri-shopping-basket-line text-3xl"></i>
+          <p
+            class="absolute top-0 left-14 bg-black rounded-lg text-[#fff] text-xs size-5 flex justify-center items-center"
+          >
+            0
+          </p>
+        </div>
+        <div class="flex items-center">
+          <button
+            class="bg-[#fff] px-5 py-2 rounded-xl font-semibold transition-colors hover:bg-black hover:text-[#fff]"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black opacity-50 hidden z-40"
+    ></div>
+
+    <section class="max-w-[1300px] mx-auto grid grid-cols-12 gap-2 my-4 pt-24">
+      <div class="col-span-2">
+        <ul
+          class="category category-left bg-white border border-[#eee] rounded-lg"
+        ></ul>
+      </div>
+      <div class="col-span-8 slider">
+        <div>
+          <img
+            src="/assets/slide-1-Bqi44VRM.png"
+            alt="Image 1"
+            class="object-cover w-full rounded-lg"
+          />
+        </div>
+        <div>
+          <img
+            src="/assets/slide-2-BKpZ5Ckd.jpg"
+            alt="Image 2"
+            class="object-cover w-full rounded-lg"
+          />
+        </div>
+        <div>
+          <img
+            src="/assets/slide-3-BbWVScFd.jpg"
+            alt="Image 3"
+            class="object-cover w-full rounded-lg"
+          />
+        </div>
+      </div>
+      <div class="col-span-2">
+        <ul
+          class="category category-right bg-white border border-[#eee] rounded-lg"
+        ></ul>
+      </div>
+    </section>
+
+    <section
+      class="max-w-[1300px] mx-auto flex justify-between items-center bg-white px-10 py-5 mb-5"
+    >
+      <div class="infor flex gap-5">
+        <i class="ri-rocket-2-line text-[#fcb800] text-5xl"></i>
+        <div class="content">
+          <h3>Miễn phí ship</h3>
+          <p>Đơn hàng trên 1 triệu</p>
+        </div>
+      </div>
+      <hr class="rotate-90 w-16 to-black" />
+      <div class="infor flex gap-5">
+        <i class="ri-arrow-go-forward-line text-[#fcb800] text-5xl"></i>
+        <div class="content">
+          <h3>365 ngày đổi trả</h3>
+          <p>Đối với sản phẩm hỏng</p>
+        </div>
+      </div>
+      <hr class="rotate-90 w-16 to-black" />
+      <div class="infor flex gap-5">
+        <i class="ri-bank-card-2-line text-[#fcb800] text-5xl"></i>
+        <div class="content">
+          <h3>Hàng luôn có sẵn</h3>
+          <p>Hàng luôn có sẵn trong kho</p>
+        </div>
+      </div>
+      <hr class="rotate-90 w-16 to-black" />
+      <div class="infor flex gap-5">
+        <i class="ri-customer-service-2-line text-[#fcb800] text-5xl"></i>
+        <div class="content">
+          <h3>Hỗ trợ 24/7</h3>
+          <p>Luôn luôn hỗ trợ bạn</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto">
+      <div class="title flex items-center pl-8 py-5">
+        <h2 class="text-[30px] font-semibold mr-5">F⚡ash Sale</h2>
+        <iframe
+          width="350"
+          height="75"
+          src="https://tienichhay.net/ma-nhung.html?action=countdown&n=T%C3%AAn%20s%E1%BB%B1%20ki%E1%BB%87n&dl=Ng%C3%A0y&hl=Gi%E1%BB%9D&ml=Ph%C3%BAt&sl=Gi%C3%A2y&date=2024-11-13&eh=22&em=22&style=horizontal&size=2&r=10px&c=ffffff&bg=fcb800&t=no&hide=yes&al=center&isln=no&rpy=no"
+          title="Đếm ngược"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </div>
+      <hr class="w-4/5 mx-auto my-5 border-t-[1px] border-[#eee]" />
+      <div class="gird grid-cols-5 sale-product flex gap-3"></div>
+    </section>
+
+    <section id="banner" class="max-w-[1300px] mx-auto my-5">
+      <a href="#!">
+        <img
+          src="/assets/banner1-BiKzo5Ua.png"
+          alt="image01"
+          class="object-cover"
+        />
+      </a>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto my-5" id="section_hot_item">
+      <h2 class="relative text-2xl font-semibold">TOP SẢN PHẨM BÁN CHẠY</h2>
+      <hr class="my-5" />
+      <div class="grid grid-cols-5 gap-5 hot_item px-5 pb-5"></div>
+
+      <div class="pagination flex justify-center mt-5"></div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto my-5" id="clothes">
+      <div class="flex p-5">
+        <i class="ri-shirt-line text-2xl"></i>
+        <h2 class="ml-5 text-2xl font-semibold">Thời trang</h2>
+      </div>
+      <hr />
+      <div class="grid grid-cols-7">
+        <div class="col-span-5">
+          <div class="image p-3">
+            <img
+              src="https://intphcm.com/data/upload/banner-thoi-trang-nam.jpg"
+              alt="thoitrang"
+              class="w-full object-cover"
+            />
+            <p class="my-3 flex gap-5 select-clothes">
+              <a class="cursor-pointer opacity-100 hover:opacity-100"
+                >New Arrivals</a
+              >
+              <a class="cursor-pointer opacity-45 hover:opacity-100"
+                >Best Seller</a
+              >
+            </p>
+            <hr class="mt-3" />
+          </div>
+          <div class="product-clothes grid grid-cols-5 gap-3 p-3"></div>
+        </div>
+        <div class="col-span-2 py-2 px-3 border-l-2">
+          <h3 class="text-xl font-semibold mb-5">Đề xuất cho bạn</h3>
+          <div class="product_list w-full flex flex-col gap-7"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto my-5" id="second_banner">
+      <div class="w-full">
+        <img src="/assets/banner2-Bkmrm4hP.jpg" alt="banner" class="w-full" />
+      </div>
+    </section>
+
+    <section class="max-w-[1300px] mx-auto my-5" id="technology">
+      <div class="flex p-5">
+        <i class="ri-smartphone-line text-2xl"></i>
+        <h2 class="ml-5 text-2xl font-semibold">Đồ Công Nghệ</h2>
+      </div>
+      <hr />
+      <div class="grid grid-cols-7">
+        <div class="col-span-5">
+          <div class="image p-3">
+            <img
+              src="https://happyphone.vn/wp-content/uploads/2024/09/Banner-Iphone-16.webp"
+              alt="thoitrang"
+              class="w-full object-cover"
+            />
+            <p class="my-3 flex gap-5 select-tech">
+              <a class="cursor-pointer opacity-100 hover:opacity-100"
+                >New Arrivals</a
+              >
+              <a class="cursor-pointer opacity-45 hover:opacity-100"
+                >Best Seller</a
+              >
+            </p>
+            <hr class="mt-3" />
+          </div>
+          <div class="product-mobile grid grid-cols-5 gap-3 p-3"></div>
+        </div>
+        <div class="col-span-2 py-2 px-3 border-l-2">
+          <h3 class="text-xl font-semibold mb-5">Đề xuất cho bạn</h3>
+          <div class="product_list_tech w-full flex flex-col gap-7"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="max-w-[1300px] mx-auto flex justify-between items-center py-14"
+      >
+        <div class="title">
+          <h4 class="font-bold text-xl">Đăng ký nhận tin</h4>
+          <p class="text-[#666666] mt-3">
+            Đăng ký để nhận thông tin về sản phẩm và phiếu giảm giá
+          </p>
+        </div>
+
+        <form action="#" class="w-3/6">
+          <input
+            type="email"
+            placeholder="Địa chỉ email"
+            class="w-10/12 outline-none px-5 py-3 border border-gray-300 rounded-s-xl"
+          />
+          <input
+            type="submit"
+            name="email_infor"
+            value="Đăng ký"
+            class="bg-[#fcb800] text-black px-5 py-[12.5px] h-full relative right-1 cursor-pointer rounded-e-xl font-semibold"
+          />
+        </form>
+      </div>
+      <hr />
+    </section>
+    <footer class="bg-white pb-5">
+      <div class="max-w-[1300px] mx-auto grid grid-cols-5">
+        <div class="col-span-2">
+          <h5 class="text-xl font-semibold my-3">Liên hệ chúng tôi</h5>
+          <p class="text-[#fcb800] font-bold text-3xl mb-5">1900.88.8888</p>
+          <p class="text-[#666] text-sm leading-6 mb-5">
+            Trần Duy Hưng, Cầu Giấy, Hà Nội <br />
+            contact@webdemo.com
+          </p>
+          <ul class="flex gap-4">
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-facebook-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-twitter-x-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-telegram-2-line"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="inline-block size-7 text-center rounded-full bg-[#efc248]"
+                ><i class="ri-github-line"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xl font-semibold my-3">Liên kết nhanh</h5>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+              >
+                Cookware
+              </a>
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Groceries</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Laptops</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Vehicle</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Smartphones</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xl font-semibold my-3">Về công ty</h5>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Cookware</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Garden Tools</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Garden Equipments</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Utensil & Gadget</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Powers And Hand Tools</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xl font-semibold my-3">Kinh doanh</h5>
+          <ul class="flex flex-col gap-3">
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Womens Jewellery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+              >
+                Sunglasses</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Mens Shirts</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Mens Watches</a
+              >
+            </li>
+            <li>
+              <a
+                href="#!"
+                class="relative text-[#666666] inline-block hover:text-[#f2b818] after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1 after:bg-[#FEBA1D] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
+                >Motorcycle</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  </body>
+</html>
