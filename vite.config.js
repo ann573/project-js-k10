@@ -12,5 +12,6 @@ export default defineConfig({
         "product-detail": resolve(__dirname, './product-detail.html')
       }
     }
-  }
+  },
+  assetsInclude: ['**/*.jpg', '**/*.png', '**/*.svg'],
 })

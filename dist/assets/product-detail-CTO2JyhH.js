@@ -43,7 +43,7 @@ import{a as x,g as v}from"./service-Ccry4lSF.js";import{g as y}from"./utils-ev9I
   <button id="minus" class="bg-gray-200 text-gray-700 p-2 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   -
 </button>
-  <input type="number" min="1" max="${e.stock}" value="1" class="remove-arrow w-full text-center focus:outline-none"/>
+  <input type="number" min="1" max="${e.stock}" value="0" class="remove-arrow w-full text-center focus:outline-none"/>
 <button id="plus" class="bg-gray-200 text-gray-700 p-2  hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
   +
 </button>
@@ -69,12 +69,13 @@ import{a as x,g as v}from"./service-Ccry4lSF.js";import{g as y}from"./utils-ev9I
         </div>
         <div>
           <p>${h(t)}</p>
-          <div class="flex my-5">
-            <p class="text-sm text-[#666666]">By ${t.reviewerName} | <span class="ml-3">${g}</span></p>
+          <div class="flex mt-1 mb-5">
+            <p class="text-sm text-[#666666] ">By <span class="cursor-pointer hover:text-blue-400">${t.reviewerName}</span> | <span class="ml-3">${g}</span></p>
           </div>
           <p>${t.comment}</p>
         </div>
       </div>
+      <hr>
     `}),n.innerHTML=s}async function T(e){const i=document.querySelector(".same_products");(await v(`products/category/${e.category}`)).products.slice(0,5).forEach(s=>{const t=document.createElement("a");t.setAttribute("href",`./product-detail.html?id=${s.id}`),t.classList.add("item_sale"),t.innerHTML=`
             <div class='contain_img'>
                 <img src="${s.thumbnail}"/>
