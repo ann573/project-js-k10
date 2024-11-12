@@ -1,10 +1,10 @@
 import { getAll, getById} from "./service.js";
 import { getParams } from "./utils.js";
+// import avatar from '../public/assests/img/avt.jpg'
 
 const searchInput = document.getElementById("search-input");
 const searchResults = document.getElementById("search-results");
 const titleProduct = document.querySelector(".title_product");
-
 const overlay = document.getElementById("overlay");
 const path = document.querySelector(".path");
 
