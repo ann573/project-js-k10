@@ -25,6 +25,8 @@ let rating;
   checkboxPrice(data);
   renderFillByRating(data);
   updateClasses(data); 
+  gallery.addEventListener("click", () => updateClasses(data));
+  list.addEventListener("click", () => updateClasses(data));
 })();
 
 const updateClasses = (data) => {
@@ -38,10 +40,7 @@ const updateClasses = (data) => {
   else if (isIncreas) renderProductIncrease(data.products)
   else renderProducts(currentPage, data.products);
 
-  gallery.addEventListener("click", () => updateClasses(data));
-  list.addEventListener("click", () => updateClasses(data));
 };
-
 
 searchProduct.addEventListener("input", function(e){
     const datafilter = data.products.filter((item)=> item.title.toLowerCase().includes(e.target.value.toLowerCase()))
@@ -103,7 +102,6 @@ function renderProductDesc(data){
 }
 
 function renderFillByRating(data) {
-  // Tạo các div và sao theo số lượng sao (1-5)
   for (let i = 1; i <= 5; i++) {
     let star = "";
     const divElement = document.createElement("div");
@@ -123,7 +121,6 @@ function renderFillByRating(data) {
       </div>
     `;
 
-    // Render các sao
     for (let j = 1; j <= i; j++) {
       star += `<span class="text-[gold] mr-1">★</span>`;
     }
@@ -136,7 +133,6 @@ function renderFillByRating(data) {
     fillByRating.appendChild(divElement);
   }
 
-  // Gán sự kiện cho các phần tử check_star ngay sau khi render xong
   const checkStar = document.getElementsByClassName("check_star");
   Array.from(checkStar).forEach((item, index) => {
     item.addEventListener("click",() => iconCheck(item, index, data));
@@ -146,7 +142,6 @@ function renderFillByRating(data) {
 function iconCheck(item, index, data){
   const checkedIcon = item.querySelector(".ri-check-line");
 
-      // Nếu thẻ <i> hiện tại đang bị ẩn (hidden), thì hiển thị nó (block), ngược lại thì ẩn đi
       if (checkedIcon.classList.contains("hidden")) {
         checkedIcon.classList.remove("hidden");
         checkedIcon.classList.add("block");

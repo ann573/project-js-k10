@@ -134,6 +134,7 @@ function renderInformartion(data) {
   </div>
   </form>
   `;
+
   main.appendChild(information);
   const plusBtn = document.querySelector("#plus")
   const minusBtn = document.querySelector("#minus")
@@ -188,7 +189,7 @@ const formattedDate = `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month 
     content += /*html */ `
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src="../assests/img/user.png" class="w-16 bg-white rounded-full object-cover"/>
+        <img src="../public/assests/img/user.png" class="w-16 bg-white rounded-full object-cover"/>
         </div>
         <div>
           <p>${renderStar(item)}</p>

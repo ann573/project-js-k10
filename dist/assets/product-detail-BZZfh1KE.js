@@ -65,7 +65,7 @@ import{a as x,g as v}from"./service-Ccry4lSF.js";import{g as y}from"./utils-ev9I
   `,i.innerHTML=n}function E(e){const i=document.querySelector(".total_reviews"),n=document.querySelector(".user-review");i.textContent=`Có ${e.reviews.length} lượt đánh giá cho sản phẩm này`;let s="";e.reviews.forEach(t=>{const o=new Date(t.date),r=o.getDate(),l=o.getMonth()+1,m=o.getFullYear(),g=`${r<10?"0"+r:r}/${l<10?"0"+l:l}/${m}`;s+=`
       <div class="my-10 flex gap-7 max-h-[410px] scroll-auto">
         <div>
-        <img src="../assests/img/user.png" class="w-16 bg-white rounded-full object-cover"/>
+        <img src="../public/assests/img/user.png" class="w-16 bg-white rounded-full object-cover"/>
         </div>
         <div>
           <p>${h(t)}</p>
